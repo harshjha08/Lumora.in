@@ -58,13 +58,17 @@ catbtn.forEach(btn => {
 });
 
 
+
 // Rendering Products on UI
 const productContainer = document.querySelector(".products-display");
 let counter = 1;
 Data.HeroProducts.forEach((product, index) => {
+    
+   
     let card = document.createElement("div");
     card.classList.add("product-box");
-
+    // calculateDiscount(product.pDiscount);
+    let originalPrice = calculateDiscount(product);
     card.innerHTML = `
         <div class="product-image-box">
             <div class="supporting-images">
@@ -97,12 +101,12 @@ Data.HeroProducts.forEach((product, index) => {
             <div class="product-rating-price">
                 <div class="rating">
                     ⭐⭐⭐⭐⭐
-                    <span>(209)</span>
+                    <span>(${product.pRiview})</span>
                 </div>
 
                 <div class="price">
-                    $${product.pPrice}
-                    <span>$3999</span>
+                    ₹${product.pPrice}
+                    <span>₹${originalPrice}</span>
                 </div>
             </div>
         </div>
@@ -114,6 +118,17 @@ Data.HeroProducts.forEach((product, index) => {
     
 
 });
+// claude please check my js here i have create a function for calculating real price from discounted
+//  but i think i placed code in not appropriate place can you solev it
+function calculateDiscount(product){
+    if(product.pDiscount === "NA"){
+        return null; // no discount -> nothing to show as "original" price
+    }
+    let finalPrice = Number(product.pPrice.replaceAll(",", ""));
+    let discountPercent = Number(product.pDiscount);
+    let originalPrice = finalPrice / (1 - discountPercent / 100);
+    return Math.floor(originalPrice);
+}
 
 // lucide.createIcons();
 

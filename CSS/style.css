@@ -153,6 +153,7 @@ body::-webkit-scrollbar{
     border-radius: 25px;
     color: var(--surface);
 }
+/*Hero Banner CSS*/
 #herobanner{
     width: 100%;
 }
@@ -229,7 +230,6 @@ body::-webkit-scrollbar{
     border-radius: 5px;
     
 }
-
 .catogory-btns{
     padding: 8px;
     width: max-content;
@@ -257,7 +257,6 @@ body::-webkit-scrollbar{
     box-shadow: 0 10px rgba(0,0,0,0.12);
     transition: .2s ease-in-out;
 }
-
 .products-display{
     width: 80%;
     padding: 20px;
@@ -351,8 +350,8 @@ body::-webkit-scrollbar{
     z-index: 9999;
 }
 .supporting-image img{
-    height: 4%;
-    width: 40px;
+    height: 5%;
+    width: 50px;
     border: 2px solid var(--accent-dark);
 }
 .supporting-image img:hover{
