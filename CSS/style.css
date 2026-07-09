@@ -260,7 +260,6 @@ body::-webkit-scrollbar{
 .products-display{
     width: 80%;
     padding: 20px;
-    /* background: rgb(43, 196, 101); */
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(4, 1fr);
@@ -359,8 +358,8 @@ body::-webkit-scrollbar{
 }
 .product-detail-box{
     border-radius: 8px;
-    box-shadow: 0 8px 30px var(--shadow-soft);
-    background: #fff;
+    box-shadow: 0 7px 10px var(--accent-light);
+    background: var(--bg-secondary);
     min-height: 130px;
     width: 100%;
     padding: 18px;
@@ -415,11 +414,7 @@ body::-webkit-scrollbar{
     margin-left: 8px;
     text-decoration: line-through;
 }
-
-/* =========================
-OVERLAY
-========================= */
-
+/* Login Signup OVERLAY */
 .auth-overlay{
     position:fixed;
     inset:0;
@@ -430,12 +425,6 @@ OVERLAY
     align-items:center;
     z-index:99999;
 }
-
-
-/* =========================
-MODAL
-========================= */
-
 .auth-modal{
     width:1180px;
     max-width:60%;
@@ -448,9 +437,6 @@ MODAL
     border:1px solid var(--border);
     box-shadow:var(--shadow);
 }
-/* =========================
-CLOSE BUTTON
-========================= */
 .close-auth{
     position:absolute;
     top:25px;
@@ -464,12 +450,9 @@ CLOSE BUTTON
     cursor:pointer;
     font-size: larger;
 }
-
-
 /* =========================
 RESPONSIVE
 ========================= */
-
 @media(max-width:980px){
 .auth-modal{
     grid-template-columns:1fr;
@@ -483,28 +466,23 @@ RESPONSIVE
 }
 
 }
-
 /* =====================================
    MODAL OPEN ANIMATION
 ===================================== */
-
 .auth-overlay{
     opacity: 0;
     visibility: hidden;
     transition: .45s ease;
 }
-
 .auth-overlay.active{
     opacity: 1;
     visibility: visible;
 }
-
 .auth-modal{
     transform: translateY(60px) scale(.88);
     opacity: 0;
     transition: .55s cubic-bezier(.175,.885,.32,1.275);
 }
-
 .auth-overlay.active .auth-modal{
     transform: translateY(0) scale(1);
     opacity: 1;

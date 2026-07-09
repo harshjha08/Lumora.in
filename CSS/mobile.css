@@ -16,4 +16,43 @@
         margin-top: 50px;
         height: 150px;
     }
+    #main-body-guest{
+        padding: 15px;
+    }
+    .quick-product-section{
+        display: flex;
+        flex-direction: column;
+        /* background: green; */
+
+        
+    }
+    .catogory-box{
+        padding: 10px;
+        /* background: red; */
+        display: flex;
+        flex-direction: column;
+        overflow-x: auto;
+    }
+    .catogories-btn{
+        overflow-x: auto;
+    }
+    .explore-more{
+        display: none;
+    }
+    .side-bar{
+        display: none;
+    }
+    .product-image-box{
+        width: 100%;
+        height: 350px;
+        margin-top: 30px;
+    }
+    .products-display{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 4px;
+    }
+    
+   
 }
