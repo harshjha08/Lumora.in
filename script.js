@@ -109,6 +109,10 @@ Data.HeroProducts.forEach((product, index) => {
                     <span>₹${originalPrice}</span>
                 </div>
             </div>
+            <div class="product-btns">
+                <button id="buy-btn">Buy</button>
+                <button id="cart-btn"><i data-lucide="shopping-cart"></i></button>
+            </div>
         </div>
         
     `;
