@@ -358,7 +358,7 @@ body::-webkit-scrollbar{
 }
 .product-detail-box{
     border-radius: 8px;
-    box-shadow: 0 7px 10px var(--accent-light);
+    box-shadow: 0 8px 30px var(--shadow-soft);
     background: var(--bg-secondary);
     min-height: 130px;
     width: 100%;
