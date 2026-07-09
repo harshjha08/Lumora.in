@@ -110,7 +110,7 @@ Data.HeroProducts.forEach((product, index) => {
                 </div>
             </div>
             <div class="product-btns">
-                <button id="buy-btn">Buy</button>
+                <button id="buy-btn">Buy Now</button>
                 <button id="cart-btn"><i data-lucide="shopping-cart"></i></button>
             </div>
         </div>
