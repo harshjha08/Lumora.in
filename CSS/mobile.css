@@ -1,0 +1,19 @@
+.mobile-nav{
+    display: none;
+}
+@media (max-width: 768px) {
+    .nav-main-content{
+       display: none;
+    }
+    .loginSignup-box{
+        display: none;
+    }
+    .mobile-nav{
+        display: flex;
+        background: red;
+    }
+    .banner-container{
+        margin-top: 50px;
+        height: 150px;
+    }
+}

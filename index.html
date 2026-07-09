@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumora | Your Premium Shopping Destination</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/mobile.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="mobile-nav">
+            <p>Harsh Jha</p>   
+        </div>
+        <div class="nav-main-content">
+            <div class="logo-box">
+                <img src="lumoralogo.png">
+            </div>
+            <div class="search-box">
+                <input id="search-box" type="text" placeholder="What are you looking for ?">
+                <div class="search-icon">
+                    <i data-lucide="search"></i>
+                </div>
+            </div>
+            <div class="nav-items">
+                <a href="#" class="nav-anchor">SHOP <i data-lucide="chevron-down"></i></a>
+                <a href="#" class="nav-anchor">BRANDS <i data-lucide="chevron-down"></i></a>
+                <a href="#" class="nav-anchor">COLECTION <i data-lucide="chevron-down"></i></a>
+                <a href="#" class="nav-anchor">CATOGORIES <i data-lucide="chevron-down"></i></a>
+            </div>
+        </div>
+        <div class="loginSignup-box">
+            <button class="auth-btn" id="signupbtn" onclick="openAuthModal()">Sign up</button>
+            <button class="auth-btn" id="loginbtn" onclick="openAuthModal()">Log in</button>
+        </div>
+    </nav>
+    <section id="herobanner">
+        <div class="banner-container">
+
+            <div class="banner-indicator">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            </div> 
+        </div>
+    </section>
+    
+    <section id="main-body-guest">
+        <div class="catogory-box">
+            <div class="catogories-btn">
+                <button class="catogory-btns active" id="all-cat">All Catogories</button>
+                <button class="catogory-btns" id="Exclusive-deals">Exclusive Deals</button>
+                <button class="catogory-btns" id="accessories">Accessories</button>
+                <button class="catogory-btns" id="beauty">Beauty</button>
+                <button class="catogory-btns" id="trending">Trending Now</button>
+                <button class="catogory-btns" id="sports">Sports</button>
+            </div>
+            <div class="explore-more">
+                <button>Explore More  <i data-lucide="arrow-right"></i></button>
+            </div>
+        </div>
+        
+        <div class="quick-product-section">
+            <div class="side-bar">
+
+            
+            </div>
+            <div class="products-display">
+                
+            
+                <!--Product Injected by JavaScript-->
+            </div>
+        </div>
+        
+    </section>
+    
+
+<!-- Overlay -->
+<div class="auth-overlay">
+    <div class="auth-modal">
+        <!-- Close -->
+        <button class="close-auth" onclick="closeModal()">
+            ✕
+        </button>
+    </div>
+</div>
+    
+    
+    
+    
+
+
+<!--Adding Required Scripts-->
+
+<script src="data.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="script.js"></script>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
