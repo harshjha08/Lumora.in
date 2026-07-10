@@ -1,4 +1,7 @@
 let loggedIn = false;
+const SavedUserName = "harshjha08";
+const SavedUserPassword = "user123";
+
 
 // ---- Banner and Promo side bar Images Sliding
 let Bannerimage = document.querySelector(".banner-container");
@@ -221,7 +224,6 @@ function closeModal(){
 
 let popupContainer = document.querySelector(".popup-msg-box");
 function showPopup(msg){
-    console.log("popup function" + msg);
     let popupBox = document.createElement("div");
     popupBox.classList.add("popupmsg");
     popupBox.innerHTML = `
@@ -236,11 +238,26 @@ function showPopup(msg){
 }
 
 // login signup box 
+const userNameInput = document.getElementById("userNameInput");
+const authPwInput  = document.getElementById('authPasswordInput');
 const authRight  = document.querySelector('.auth-right');
 const authTabs   = document.querySelectorAll('.auth-tab');
 const authSubmit = document.getElementById('authSubmitBtn');
 const authFooter = document.getElementById('authFooterText');
 
+authSubmit.addEventListener("click", () => {
+    let userName = userNameInput.value;
+    let userPass = authPwInput.value;
+    console.log(userName, userPass);
+    if(userName == SavedUserName && userPass == SavedUserPassword){
+        userNameInput.value = "";
+        authPwInput.value = "";
+        closeModal();
+        showPopup("Login Sucessfully");
+        loggedIn = "true";
+
+    }
+});
 function setAuthMode(mode){
     authTabs.forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
 
@@ -264,7 +281,7 @@ authTabs.forEach(btn => btn.addEventListener('click', () => setAuthMode(btn.data
 document.getElementById('authSwitchLink').addEventListener('click', () => setAuthMode('signup'));
 
 // password show/hide
-const authPwInput  = document.getElementById('authPasswordInput');
+
 const authPwToggle = document.getElementById('authTogglePassword');
 
 authPwToggle.addEventListener('click', () => {
