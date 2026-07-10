@@ -111,7 +111,7 @@ Data.HeroProducts.forEach((product, index) => {
             </div>
             <div class="product-btns">
                 <button id="buy-btn">Buy Now</button>
-                <button id="cart-btn"><i data-lucide="shopping-cart"></i></button>
+                <button class="Cart-btn" id="cart-btn"><i data-lucide="shopping-cart"></i></button>
             </div>
         </div>
         
@@ -122,11 +122,10 @@ Data.HeroProducts.forEach((product, index) => {
     
 
 });
-// claude please check my js here i have create a function for calculating real price from discounted
-//  but i think i placed code in not appropriate place can you solev it
+
 function calculateDiscount(product){
     if(product.pDiscount === "NA"){
-        return null; // no discount -> nothing to show as "original" price
+        return null; 
     }
     let finalPrice = Number(product.pPrice.replaceAll(",", ""));
     let discountPercent = Number(product.pDiscount);
@@ -134,7 +133,7 @@ function calculateDiscount(product){
     return Math.floor(originalPrice);
 }
 
-// lucide.createIcons();
+ lucide.createIcons();
 
 // --- wish list btn
 let wishListBtn = document.querySelectorAll(".wishlist-btn");
@@ -147,15 +146,32 @@ wishListBtn.forEach(btn => {
             openAuthModal();
         }else{
             btn.classList.toggle("active");
+            showPopup("added to wishlist");
         }
+    });
+});
+function showWishList(){
+    console.log(wishListArray);
+};
+
+// add to cart btn
+let cartBtn = document.querySelectorAll(".Cart-btn");
+cartBtn.forEach(btn => {
+    btn.addEventListener("click", () => {
         
+        let prductIdCart = btn.getAttribute("id");
+        if(!loggedIn){
+            openAuthModal();
+        }else{
+            showPopup("added to Cart");
+        }
     });
 });
 
 
+
 // --- Supporting image click: swap it with the currently shown main image
 let supportingImageDiv = document.querySelectorAll(".supporting-image-div");
-
 supportingImageDiv.forEach(div => {
     div.addEventListener("click", () => {
         // id looks like "SPImage.3.2" -> we only need the product number ("3")
@@ -168,9 +184,7 @@ supportingImageDiv.forEach(div => {
         div.src = oldMainSrc;
     });
 });
-function showWishList(){
-    console.log(wishListArray);
-}
+
 
 
 // ==============================
@@ -204,3 +218,18 @@ function closeModal(){
 
 }
 
+let popupContainer = document.querySelector(".popup-msg-box");
+function showPopup(msg){
+    console.log("popup function" + msg);
+    let popupBox = document.createElement("div");
+    popupBox.classList.add("popupmsg");
+    popupBox.innerHTML = `
+     <div class="popupmsg">
+         <p>${msg}</p>
+    </div>
+    `;
+    popupContainer.append(popupBox);
+    setTimeout(() => {
+        popupBox.remove();
+    }, 2000);
+}

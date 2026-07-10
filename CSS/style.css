@@ -10,6 +10,7 @@ html{
 }
 body{
     background: var(--bg);
+    position: relative;
 }
 body::-webkit-scrollbar{
     display: none;
@@ -351,6 +352,7 @@ body::-webkit-scrollbar{
     left: 5px;
     z-index: 9999;
 }
+
 .supporting-image img{
     height: 5%;
     width: 50px;
@@ -358,6 +360,7 @@ body::-webkit-scrollbar{
 }
 .supporting-image img:hover{
     border: 2px solid var(--border);
+    cursor: pointer;
 }
 .product-detail-box{
     border-radius: 8px;
@@ -423,7 +426,9 @@ body::-webkit-scrollbar{
     align-items: center;
     gap: 10px;
     margin-top: 18px;
+    
 }
+
 .product-btns button{
     padding: 6px;
     min-width: 50%;
@@ -432,6 +437,11 @@ body::-webkit-scrollbar{
     outline: none;
     min-height: 40px;
 }
+.product-btns button:hover{
+    cursor: pointer;
+    
+}
+
 .lucide-shopping-cart{
     width: 20px;
     color: var(--primary-dark);
@@ -442,6 +452,25 @@ body::-webkit-scrollbar{
 #buy-btn{
     background: var(--primary-dark);
     color: var(--surface);
+}
+
+.popupmsg{
+    z-index: 999999;
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: var(--accent);
+    color: var(--bg);
+    border-radius: 15px;
+    min-width: 200px;
+    border: 1px solid var(--danger);
+    transform: translate(-50%, -50%);
+    animation: slideDown 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+
 }
 /* Login Signup OVERLAY */
 .auth-overlay{
@@ -517,3 +546,13 @@ RESPONSIVE
     opacity: 1;
 }
 
+@keyframes slideDown {
+    from{
+        opacity: 0;
+        transform: translate(-50%, -100px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
