@@ -118,7 +118,7 @@ Data.HeroProducts.forEach((product, index) => {
     `;
     counter++;
 
-    productContainer.append(card);
+    productContainer.prepend(card);
     
 
 });
