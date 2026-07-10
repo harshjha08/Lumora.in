@@ -249,7 +249,7 @@ body::-webkit-scrollbar{
 }
 .side-bar{
     position: sticky;
-    top: 40px;
+    top: 110px;
     left: 20px;
     background-image: url(../promoimg3.jpeg);
     background-position: center;
@@ -257,7 +257,7 @@ body::-webkit-scrollbar{
     background-size: cover;
     border-radius: var(--radius-lg);
     width: 25%;
-    height: 90vh; 
+    height: 80vh; 
     box-shadow: 0 10px rgba(0,0,0,0.12);
     transition: .2s ease-in-out;
 }

@@ -31,7 +31,7 @@
     }
    
     .banner-container{
-        margin-top: 50px;
+       
         height: 150px;
     }
     #main-body-guest{
@@ -50,6 +50,9 @@
         flex-direction: column;
         overflow-x: auto;
     }
+    .catogory-box::-webkit-scrollbar{
+        display: none;
+    }
     .catogories-btn{
         overflow-x: auto;
     }
@@ -57,7 +60,9 @@
         display: none;
     }
     .side-bar{
-        display: none;
+       height: 70vh;
+       width: 100%;
+       position:static;
     }
     .product-image-box{
         width: 100%;
