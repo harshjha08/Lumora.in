@@ -234,3 +234,46 @@ function showPopup(msg){
         popupBox.remove();
     }, 2000);
 }
+
+// login signup box 
+const authRight  = document.querySelector('.auth-right');
+const authTabs   = document.querySelectorAll('.auth-tab');
+const authSubmit = document.getElementById('authSubmitBtn');
+const authFooter = document.getElementById('authFooterText');
+
+function setAuthMode(mode){
+    authTabs.forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
+
+    if(mode === 'signup'){
+        authRight.classList.add('mode-signup');
+        authSubmit.textContent = 'Signup';
+        authFooter.innerHTML = 'Already have an account? <a id="authSwitchLink">Login</a>';
+    } else {
+        authRight.classList.remove('mode-signup');
+        authSubmit.textContent = 'Login';
+        authFooter.innerHTML = "Don't have an account? <a id=\"authSwitchLink\">Signup</a>";
+    }
+
+    // link har baar innerHTML replace hone par nayi id ke saath bind karo
+    document.getElementById('authSwitchLink').addEventListener('click', () => {
+        setAuthMode(mode === 'signup' ? 'login' : 'signup');
+    });
+}
+
+authTabs.forEach(btn => btn.addEventListener('click', () => setAuthMode(btn.dataset.mode)));
+document.getElementById('authSwitchLink').addEventListener('click', () => setAuthMode('signup'));
+
+// password show/hide
+const authPwInput  = document.getElementById('authPasswordInput');
+const authPwToggle = document.getElementById('authTogglePassword');
+
+authPwToggle.addEventListener('click', () => {
+    const isHidden = authPwInput.type === 'password';
+    authPwInput.type = isHidden ? 'text' : 'password';
+    authPwToggle.innerHTML = isHidden
+        ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.6 21.6 0 0 1 5.06-5.94M9.9 4.24A10.4 10.4 0 0 1 12 4c7 0 11 7 11 7a21.6 21.6 0 0 1-2.34 3.24M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>'
+        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>';
+});
+
+// submit par page reload rukwane ke liye — real auth logic yahan lagao
+document.getElementById('authForm').addEventListener('submit', e => e.preventDefault());
