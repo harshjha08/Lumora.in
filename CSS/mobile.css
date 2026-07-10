@@ -12,9 +12,11 @@
     .nav{
         height: 85px;
         padding: 2px;
+        /* box-shadow: 0 15px 35px rgba(176,141,87,0.35); */
     }
-    .lucide-menu{
-        height: 50%;
+    .lucide-panel-left{
+        height: 30px;
+        width: 30px;
         color: #B08D57;
     }
     .mobile-nav{
@@ -25,7 +27,6 @@
     }
    
     .search-box{
-     
        width: 80%;
     }
    
