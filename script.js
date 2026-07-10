@@ -1,4 +1,4 @@
-let loggedIn = true;
+let loggedIn = false;
 
 // ---- Banner and Promo side bar Images Sliding
 let Bannerimage = document.querySelector(".banner-container");
@@ -133,7 +133,7 @@ function calculateDiscount(product){
     return Math.floor(originalPrice);
 }
 
- lucide.createIcons();
+
 
 // --- wish list btn
 let wishListBtn = document.querySelectorAll(".wishlist-btn");
@@ -169,11 +169,12 @@ cartBtn.forEach(btn => {
 });
 
 
-
+// is code ki baat kar raha hu mein claude please solve this 
 // --- Supporting image click: swap it with the currently shown main image
 let supportingImageDiv = document.querySelectorAll(".supporting-image-div");
 supportingImageDiv.forEach(div => {
     div.addEventListener("click", () => {
+    
         // id looks like "SPImage.3.2" -> we only need the product number ("3")
         let [ , productNumber ] = div.id.split(".");
         let mainImage = document.getElementById("product" + productNumber);
