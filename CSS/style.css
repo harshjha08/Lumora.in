@@ -449,7 +449,7 @@ body::-webkit-scrollbar{
 #cart-btn{
     background: var(--accent);
 }
-#buy-btn{
+.buy-btn{
     background: var(--primary-dark);
     color: var(--surface);
 }

@@ -123,7 +123,7 @@ Data.HeroProducts.forEach((product, index) => {
                 </div>
             </div>
             <div class="product-btns">
-                <button id="buy-btn">Buy Now</button>
+                <button class="buy-btn">Buy Now</button>
                 <button class="Cart-btn" id="cart-btn"><i data-lucide="shopping-cart"></i></button>
             </div>
         </div>
@@ -312,3 +312,18 @@ authPwToggle.addEventListener('click', () => {
 
 // submit par page reload rukwane ke liye — real auth logic yahan lagao
 document.getElementById('authForm').addEventListener('submit', e => e.preventDefault());
+
+
+let viewProduct = document.querySelectorAll(".product-image");
+viewProduct.forEach((product) => {
+    product.addEventListener("click", () => {
+        window.location.href = "productView.html";
+    })
+})
+
+let buyBtn = document.querySelectorAll(".buy-btn");
+buyBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        window.location.href = "productView.html";
+    })
+})
