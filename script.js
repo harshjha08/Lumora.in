@@ -2,7 +2,17 @@ let loggedIn = false;
 const SavedUserName = "harshjha08";
 const SavedUserPassword = "user123";
 
+window.addEventListener("load",()=>{
 
+    const preloader=document.querySelector(".preloader");
+
+    setTimeout(()=>{
+
+        preloader.classList.add("hide");
+
+    },4000);
+
+});
 // ---- Banner and Promo side bar Images Sliding
 let Bannerimage = document.querySelector(".banner-container");
 const ImageDot = document.querySelectorAll(".dot");
@@ -248,16 +258,24 @@ const authFooter = document.getElementById('authFooterText');
 authSubmit.addEventListener("click", () => {
     let userName = userNameInput.value;
     let userPass = authPwInput.value;
-    console.log(userName, userPass);
     if(userName == SavedUserName && userPass == SavedUserPassword){
         userNameInput.value = "";
         authPwInput.value = "";
         closeModal();
         showPopup("Login Sucessfully");
         loggedIn = "true";
-
+    }else{
+        showInvalidMsg("Invalid User Or Password");
     }
 });
+let alertMsgBox = document.querySelector(".alert-msg");
+function showInvalidMsg(msg){
+    alertMsgBox.innerHTML = msg;
+    alertMsgBox.style.display = "flex";
+    setTimeout(() => {
+        alertMsgBox.style.display = "none";
+    }, 2000);
+}
 function setAuthMode(mode){
     authTabs.forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
 

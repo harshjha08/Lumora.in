@@ -464,6 +464,21 @@ const Data = {
             pImage3: "ProductImages/Product31/product31_04.jpeg",
             pImage4: "ProductImages/Product31/product31_05.jpeg",
             pDesc: "Statement festive couture with luxurious handcrafted finish."
+        },
+        {
+            pId: "P1232",
+            pTag: "HERITAGE COUTURE",
+            pName: "Heritage Banarasi Silk Saree",
+            pPrice: "16,999",
+            pDiscount: 18,
+            pRating: "5",
+            pRiview: 247,
+            pMainImage: "ProductImages/Product32/product32_01.jpeg",
+            pImage1: "ProductImages/Product32/product32_02.jpeg",
+            pImage2: "ProductImages/Product32/product32_03.jpeg",
+            pImage3: "ProductImages/Product32/product32_04.jpeg",
+            pImage4: "ProductImages/Product32/product32_05.jpeg",
+            pDesc: "Handwoven Banarasi silk adorned with timeless antique gold zari craftsmanship."
         }
     ]
 }
