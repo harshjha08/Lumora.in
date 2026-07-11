@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumora Couture — Your Cart</title>
+<style>
+  :root{
+    --gold:#b6832e;
+    --gold-dark:#8a6122;
+    --cream:#faf7f2;
+    --cream-2:#f3ede2;
+    --ink:#2b241b;
+    --muted:#7d7466;
+    --line:#e7ddc9;
+    --red:#c0392b;
+    --green:#3a7d44;
+    --radius:10px;
+    --maxw:1440px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;overflow-x:hidden;width:100%;}
+  body{
+    font-family:'Segoe UI',Arial,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  button{font-family:inherit;cursor:pointer;}
+
+  .announce-bar{
+    background:var(--gold);
+    color:#fff;
+    font-size:12px;
+    letter-spacing:.06em;
+    padding:9px 12px;
+  }
+  .announce-track{
+    display:flex;
+    justify-content:space-between;
+    max-width:var(--maxw);
+    margin:0 auto;
+    flex-wrap:wrap;
+    gap:6px 20px;
+    text-align:center;
+  }
+  .announce-track span{white-space:nowrap;}
+
+  header.site-header{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:20;
+  }
+  .header-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 24px;
+    gap:16px;
+  }
+  .logo{
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:26px;
+    color:var(--gold-dark);
+    letter-spacing:.03em;
+    line-height:1;
+  }
+  .logo small{
+    display:block;
+    font-family:Arial,sans-serif;
+    font-size:9px;
+    letter-spacing:.35em;
+    color:var(--ink);
+    text-align:center;
+    margin-top:2px;
+  }
+  nav.main-nav{
+    display:flex;
+    gap:26px;
+    font-size:13px;
+    letter-spacing:.03em;
+    flex-wrap:wrap;
+  }
+  .header-icons{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-shrink:0;
+  }
+  .icon-btn{
+    position:relative;
+    font-size:18px;
+    background:none;
+    border:none;
+    color:var(--ink);
+  }
+  .badge{
+    position:absolute;
+    top:-8px;
+    right:-9px;
+    background:var(--gold-dark);
+    color:#fff;
+    font-size:10px;
+    width:16px;height:16px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .hamburger{display:none;background:none;border:none;font-size:22px;color:var(--ink);}
+
+  .breadcrumb{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:16px 24px 0;
+    font-size:13px;
+    color:var(--muted);
+  }
+  .breadcrumb a{color:var(--muted);}
+  .breadcrumb .sep{margin:0 6px;}
+  .breadcrumb .current{color:var(--ink);}
+
+  h1.page-title{
+    text-align:center;
+    font-family:Georgia,'Times New Roman',serif;
+    font-weight:400;
+    letter-spacing:.12em;
+    font-size:30px;
+    margin:20px 0 8px;
+  }
+  .title-divider{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    margin-bottom:28px;
+  }
+  .title-divider span{width:24px;height:1px;background:var(--gold);display:inline-block;}
+  .title-divider i{width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block;}
+
+  .cart-layout{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 24px 40px;
+    display:grid;
+    grid-template-columns:1fr 340px;
+    gap:24px;
+    align-items:start;
+  }
+
+  .cart-panel{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px;
+  }
+  .cart-table-head{
+    display:grid;
+    grid-template-columns:2.4fr 1fr 1.1fr .8fr;
+    font-size:12px;
+    letter-spacing:.06em;
+    color:var(--muted);
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+  }
+  .cart-table-head span:nth-child(2){text-align:left;}
+  .cart-table-head span:nth-child(3){text-align:center;}
+  .cart-table-head span:nth-child(4){text-align:right;}
+
+  .cart-item{
+    display:grid;
+    grid-template-columns:2.4fr 1fr 1.1fr .8fr;
+    align-items:center;
+    gap:12px;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .cart-item:last-of-type{border-bottom:none;}
+
+  .item-info{display:flex;gap:14px;align-items:flex-start;}
+  .item-info img{
+    width:78px;height:96px;object-fit:cover;border-radius:6px;flex-shrink:0;
+  }
+  .item-name{font-size:15px;font-weight:600;margin:0 0 4px;}
+  .item-variant{font-size:13px;color:var(--muted);margin:0 0 6px;}
+  .item-meta{font-size:12px;color:var(--muted);margin:0 0 8px;}
+  .stock-pill{
+    display:inline-block;
+    font-size:11px;
+    background:var(--cream-2);
+    color:var(--gold-dark);
+    padding:3px 10px;
+    border-radius:20px;
+  }
+
+  .price-cell{font-size:14px;}
+  .price-now{font-weight:600;}
+  .price-old{
+    color:#b6ada0;
+    text-decoration:line-through;
+    font-size:13px;
+    margin-left:6px;
+  }
+  .price-off{color:var(--red);font-size:12px;display:block;margin-top:2px;}
+
+  .qty-cell{display:flex;flex-direction:column;align-items:center;gap:8px;}
+  .qty-control{
+    display:flex;
+    align-items:center;
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .qty-control button{
+    background:var(--cream-2);
+    border:none;
+    width:30px;height:30px;
+    font-size:15px;
+    color:var(--ink);
+  }
+  .qty-control input{
+    width:36px;
+    text-align:center;
+    border:none;
+    font-size:14px;
+    -moz-appearance:textfield;
+  }
+  .qty-control input::-webkit-outer-spin-button,
+  .qty-control input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+  .remove-link{
+    font-size:12px;
+    color:var(--muted);
+    display:flex;
+    align-items:center;
+    gap:4px;
+    background:none;
+    border:none;
+  }
+  .remove-link:hover{color:var(--red);}
+
+  .total-cell{text-align:right;font-weight:600;font-size:15px;}
+
+  .cart-actions{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:20px;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .btn-outline{
+    background:none;
+    border:1px solid var(--ink);
+    padding:11px 18px;
+    font-size:13px;
+    letter-spacing:.04em;
+    border-radius:6px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .btn-outline.danger{border-color:var(--red);color:var(--red);}
+
+  .summary-panel{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px;
+    position:sticky;
+    top:90px;
+  }
+  .summary-title{
+    font-size:16px;
+    letter-spacing:.05em;
+    margin:0 0 18px;
+  }
+  .summary-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+    margin-bottom:14px;
+    color:var(--ink);
+  }
+  .summary-row.discount{color:var(--red);}
+  .summary-row .free{color:var(--green);}
+  .summary-divider{border:none;border-top:1px solid var(--line);margin:16px 0;}
+  .grand-total-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .savings-note{
+    color:var(--green);
+    font-size:13px;
+    text-align:center;
+    margin-bottom:18px;
+  }
+  .btn-gold{
+    width:100%;
+    background:var(--gold);
+    color:#fff;
+    border:none;
+    padding:14px;
+    font-size:14px;
+    letter-spacing:.06em;
+    border-radius:6px;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    margin-bottom:16px;
+  }
+  .or-divider{
+    display:flex;align-items:center;gap:10px;
+    color:var(--muted);font-size:12px;
+    margin-bottom:16px;
+  }
+  .or-divider::before,.or-divider::after{content:"";flex:1;height:1px;background:var(--line);}
+  .btn-razorpay{
+    width:100%;
+    background:#fff;
+    border:1px solid var(--ink);
+    padding:13px;
+    font-size:14px;
+    border-radius:6px;
+    display:flex;align-items:center;justify-content:center;gap:6px;
+    margin-bottom:14px;
+  }
+  .secure-note{
+    text-align:center;
+    font-size:12px;
+    color:var(--muted);
+    display:flex;align-items:center;justify-content:center;gap:6px;
+  }
+
+  .perks-bar{
+    max-width:var(--maxw);
+    margin:0 auto 40px;
+    padding:0 24px;
+  }
+  .perks-grid{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    padding:26px 10px;
+  }
+  .perk{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    justify-content:center;
+    padding:0 10px;
+    border-right:1px solid var(--line);
+    text-align:left;
+  }
+  .perk:last-child{border-right:none;}
+  .perk-icon{
+    width:40px;height:40px;
+    border-radius:50%;
+    background:var(--cream-2);
+    display:flex;align-items:center;justify-content:center;
+    font-size:18px;
+    color:var(--gold-dark);
+    flex-shrink:0;
+  }
+  .perk h4{margin:0 0 2px;font-size:13.5px;}
+  .perk p{margin:0;font-size:12px;color:var(--muted);}
+
+  .related-section{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 24px 60px;
+  }
+  .related-title{
+    text-align:center;
+    font-family:Georgia,serif;
+    font-size:24px;
+    letter-spacing:.08em;
+    margin-bottom:8px;
+  }
+  .related-carousel-wrap{
+    position:relative;
+    margin-top:28px;
+  }
+  .related-scroll{
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns:calc((100% - 5*20px)/6);
+    gap:20px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding-bottom:8px;
+    scrollbar-width:thin;
+  }
+  .related-scroll::-webkit-scrollbar{height:6px;}
+  .related-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:10px;}
+
+  .product-card{position:relative;}
+  .product-card img{
+    width:100%;
+    aspect-ratio:3/4;
+    object-fit:cover;
+    border-radius:8px;
+  }
+  .wish-btn{
+    position:absolute;
+    top:10px;right:10px;
+    background:#fff;
+    border:none;
+    width:32px;height:32px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:14px;
+    box-shadow:0 1px 4px rgba(0,0,0,.15);
+  }
+  .product-card h5{
+    font-size:13.5px;
+    font-weight:500;
+    margin:10px 0 4px;
+  }
+  .product-price{font-size:13px;margin-bottom:4px;}
+  .product-price .old{color:#b6ada0;text-decoration:line-through;margin:0 6px;font-size:12px;}
+  .product-price .off{color:var(--red);}
+  .product-rating{font-size:12px;color:var(--muted);}
+  .product-rating .stars{color:#e0a527;}
+
+  .carousel-nav{
+    position:absolute;
+    top:38%;
+    transform:translateY(-50%);
+    background:#fff;
+    border:1px solid var(--line);
+    width:36px;height:36px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+    z-index:2;
+  }
+  .carousel-nav.prev{left:-18px;}
+  .carousel-nav.next{right:-18px;}
+
+  /* ===== Responsive ===== */
+  @media (max-width:1100px){
+    nav.main-nav{display:none;}
+    .hamburger{display:block;}
+    .related-scroll{grid-auto-columns:calc((100% - 3*20px)/4);}
+  }
+
+  @media (max-width:900px){
+    .cart-layout{grid-template-columns:1fr;}
+    .summary-panel{position:static;order:2;}
+    .cart-panel{order:1;}
+    .related-scroll{grid-auto-columns:calc((100% - 2*16px)/3);}
+    .perks-grid{grid-template-columns:repeat(2,1fr);row-gap:20px;}
+    .perk{border-right:none;}
+    .perk:nth-child(odd){border-right:1px solid var(--line);}
+  }
+
+  @media (max-width:640px){
+    .header-inner{padding:14px 16px;}
+    .logo{font-size:21px;}
+    .breadcrumb{padding:14px 16px 0;}
+    h1.page-title{font-size:22px;letter-spacing:.08em;}
+    .cart-layout{padding:0 16px 28px;gap:16px;}
+    .perks-bar,.related-section{padding:0 16px;}
+
+    .cart-panel{padding:16px;}
+    .cart-table-head{display:none;}
+
+    .cart-item{
+      grid-template-columns:1fr;
+      gap:10px;
+      padding:18px 0;
+    }
+    .item-info{width:100%;}
+    .item-info img{width:68px;height:86px;}
+
+    .price-cell,.qty-cell,.total-cell{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      width:100%;
+      font-size:14px;
+    }
+    .price-cell::before{content:"Price";color:var(--muted);font-size:12px;}
+    .qty-cell{flex-direction:row;}
+    .qty-cell::before{content:"Quantity";color:var(--muted);font-size:12px;}
+    .total-cell{font-size:14px;}
+    .total-cell::before{content:"Total";color:var(--muted);font-weight:400;font-size:12px;}
+    .qty-cell > div:first-child{display:flex;flex-direction:column;align-items:flex-end;gap:6px;}
+
+    .cart-actions{flex-direction:column;align-items:stretch;}
+    .btn-outline{justify-content:center;}
+
+    .perks-grid{grid-template-columns:1fr;padding:18px;}
+    .perk{border-right:none !important;justify-content:flex-start;padding:10px 0;border-bottom:1px solid var(--line);}
+    .perk:last-child{border-bottom:none;}
+
+    .related-title{font-size:19px;}
+    .related-scroll{grid-auto-columns:calc((100% - 16px)/2);gap:12px;}
+    .carousel-nav{display:none;}
+  }
+
+  @media (max-width:380px){
+    .related-scroll{grid-auto-columns:75%;}
+  }
+</style>
+</head>
+<body>
+
+<div class="announce-bar">
+  <div class="announce-track">
+    <span>★ FREE SHIPPING ON PREPAID ORDERS</span>
+    <span>★ COD AVAILABLE</span>
+    <span>★ EASY RETURNS WITHIN 7 DAYS</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">LUMORA<small>COUTURE</small></div>
+    <nav class="main-nav">
+      <a href="#">NEW IN</a>
+      <a href="#">SAREES</a>
+      <a href="#">LEHENGAS</a>
+      <a href="#">SUITS</a>
+      <a href="#">SHARARAS</a>
+      <a href="#">COLLECTIONS</a>
+      <a href="#">ACCESSORIES</a>
+      <a href="#">SALE</a>
+    </nav>
+    <div class="header-icons">
+      <button class="icon-btn" aria-label="Search">🔍</button>
+      <button class="icon-btn" aria-label="Account">👤</button>
+      <button class="icon-btn" aria-label="Wishlist">♡<span class="badge">3</span></button>
+      <button class="icon-btn" aria-label="Cart">🛍<span class="badge">2</span></button>
+      <button class="hamburger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="#">Home</a><span class="sep">›</span><span class="current">Cart</span>
+</div>
+
+<h1 class="page-title">YOUR CART (2)</h1>
+<div class="title-divider"><span></span><i></i><span></span></div>
+
+<div class="cart-layout">
+
+  <section class="cart-panel">
+    <div class="cart-table-head">
+      <span>PRODUCT</span><span>PRICE</span><span>QUANTITY</span><span>TOTAL</span>
+    </div>
+
+    <div class="cart-item" data-price="16999">
+      <div class="item-info">
+        <img src="https://images.unsplash.com/photo-1610189020235-3fda3a3cb3e8?w=200&h=250&fit=crop" alt="Heritage Banarasi Silk Saree">
+        <div>
+          <p class="item-name">Heritage Banarasi Silk Saree</p>
+          <p class="item-variant">Royal Wine Red</p>
+          <p class="item-meta">Saree Length: 5.5 MTR | Blouse: 0.8 MTR</p>
+          <span class="stock-pill">In Stock</span>
+        </div>
+      </div>
+      <div class="price-cell">
+        <span class="price-now">₹16,999</span><span class="price-old">₹20,999</span>
+        <span class="price-off">18% OFF</span>
+      </div>
+      <div class="qty-cell">
+        <div>
+          <div class="qty-control">
+            <button class="qty-minus">−</button>
+            <input type="text" value="1" readonly>
+            <button class="qty-plus">+</button>
+          </div>
+          <button class="remove-link">🗑 Remove</button>
+        </div>
+      </div>
+      <div class="total-cell">₹16,999</div>
+    </div>
+
+    <div class="cart-item" data-price="14999">
+      <div class="item-info">
+        <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=200&h=250&fit=crop" alt="Emerald Zari Lehenga Set">
+        <div>
+          <p class="item-name">Emerald Zari Lehenga Set</p>
+          <p class="item-variant">Emerald Green</p>
+          <p class="item-meta">Size: M | Style: With Dupatta</p>
+          <span class="stock-pill">In Stock</span>
+        </div>
+      </div>
+      <div class="price-cell">
+        <span class="price-now">₹14,999</span><span class="price-old">₹19,999</span>
+        <span class="price-off">25% OFF</span>
+      </div>
+      <div class="qty-cell">
+        <div>
+          <div class="qty-control">
+            <button class="qty-minus">−</button>
+            <input type="text" value="1" readonly>
+            <button class="qty-plus">+</button>
+          </div>
+          <button class="remove-link">🗑 Remove</button>
+        </div>
+      </div>
+      <div class="total-cell">₹14,999</div>
+    </div>
+
+    <div class="cart-actions">
+      <button class="btn-outline">← CONTINUE SHOPPING</button>
+      <button class="btn-outline danger">🗑 CLEAR CART</button>
+    </div>
+  </section>
+
+  <aside class="summary-panel">
+    <h3 class="summary-title">ORDER SUMMARY</h3>
+    <div class="summary-row"><span>Subtotal (2 Items)</span><span>₹31,998</span></div>
+    <div class="summary-row discount"><span>Discount</span><span>−₹5,999</span></div>
+    <div class="summary-row"><span>Shipping</span><span class="free">FREE</span></div>
+    <div class="summary-row"><span>Tax (Inclusive)</span><span>₹2,880</span></div>
+    <hr class="summary-divider">
+    <div class="grand-total-row"><span>GRAND TOTAL</span><span>₹28,879</span></div>
+    <p class="savings-note">You Save ₹5,999 on this order</p>
+    <button class="btn-gold">🔒 PROCEED TO CHECKOUT</button>
+    <div class="or-divider">OR</div>
+    <button class="btn-razorpay">Buy with <strong style="color:#0d2b7a">Razorpay</strong></button>
+    <p class="secure-note">🛡 100% Secure Payments</p>
+  </aside>
+
+</div>
+
+<div class="perks-bar">
+  <div class="perks-grid">
+    <div class="perk"><div class="perk-icon">🚚</div><div><h4>Free Shipping</h4><p>On Prepaid Orders</p></div></div>
+    <div class="perk"><div class="perk-icon">📦</div><div><h4>Easy Returns</h4><p>Within 7 Days</p></div></div>
+    <div class="perk"><div class="perk-icon">🛡</div><div><h4>Secure Payment</h4><p>100% Protected</p></div></div>
+    <div class="perk"><div class="perk-icon">✦</div><div><h4>Premium Quality</h4><p>Assured</p></div></div>
+  </div>
+</div>
+
+<section class="related-section">
+  <h2 class="related-title">YOU MAY ALSO LOVE</h2>
+  <div class="title-divider"><span></span><i></i><span></span></div>
+
+  <div class="related-carousel-wrap">
+    <button class="carousel-nav prev" onclick="scrollRel(-1)">‹</button>
+    <div class="related-scroll" id="relScroll">
+      <div class="product-card">
+        <button class="wish-btn">♡</button>
+        <img src="https://images.unsplash.com/photo-1610189020235-3fda3a3cb3e8?w=300&h=400&fit=crop" alt="Rangrez Banarasi Silk Saree">
+        <h5>Rangrez Banarasi Silk Saree</h5>
+        <p class="product-price">₹15,999<span class="old">₹19,999</span><span class="off">20% OFF</span></p>
+        <p class="product-rating"><span class="stars">★</span> 5.0 (186)</p>
+      </div>
+      <div class="product-card">
+        <button class="wish-btn">♡</button>
+        <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=300&h=400&fit=crop" alt="Mehfil Banarasi Silk Saree">
+        <h5>Mehfil Banarasi Silk Saree</h5>
+        <p class="product-price">₹14,999<span class="old">₹18,999</span><span class="off">21% OFF</span></p>
+        <p class="product-rating"><span class="stars">★</span> 5.0 (132)</p>
+      </div>
+      <div class="product-card">
+        <button class="wish-btn">♡</button>
+        <img src="https://images.unsplash.com/photo-1610189019473-4d24b2b1f01a?w=300&h=400&fit=crop" alt="Noor Banarasi Silk Saree">
+        <h5>Noor Banarasi Silk Saree</h5>
+        <p class="product-price">₹16,499<span class="old">₹20,999</span><span class="off">21% OFF</span></p>
+        <p class="product-rating"><span class="stars">★</span> 5.0 (201)</p>
+      </div>
+      <div class="product-card">
+        <button class="wish-btn">♡</button>
+        <img src="https://images.unsplash.com/photo-1610189020684-6a5a0e8d4f0e?w=300&h=400&fit=crop" alt="Zeenat Banarasi Silk Saree">
+        <h5>Zeenat Banarasi Silk Saree</h5>
+        <p class="product-price">₹15,499<span class="old">₹19,999</span><span class="off">22% OFF</span></p>
+        <p class="product-rating"><span class="stars">★</span> 5.0 (268)</p>
+      </div>
+      <div class="product-card">
+        <button class="wish-btn">♡</button>
+        <img src="https://images.unsplash.com/photo-1622470953794-aa9c70b0fb9d?w=300&h=400&fit=crop" alt="Ira Banarasi Silk Saree">
+        <h5>Ira Banarasi Silk Saree</h5>
+        <p class="product-price">₹14,999<span class="old">₹18,999</span><span class="off">21% OFF</span></p>
+        <p class="product-rating"><span class="stars">★</span> 5.0 (117)</p>
+      </div>
+      <div class="product-card">
+        <button class="wish-btn">♡</button>
+        <img src="https://images.unsplash.com/photo-1610189019787-1a5e29c6f4c1?w=300&h=400&fit=crop" alt="Rose Gold Lehenga Set">
+        <h5>Rose Gold Lehenga Set</h5>
+        <p class="product-price">₹18,999<span class="old">₹24,999</span><span class="off">24% OFF</span></p>
+        <p class="product-rating"><span class="stars">★</span> 5.0 (89)</p>
+      </div>
+    </div>
+    <button class="carousel-nav next" onclick="scrollRel(1)">›</button>
+  </div>
+</section>
+
+<script>
+  function scrollRel(dir){
+    const el = document.getElementById('relScroll');
+    const cardWidth = el.firstElementChild.getBoundingClientRect().width + 20;
+    el.scrollBy({left: dir * cardWidth * 2, behavior:'smooth'});
+  }
+
+  function formatINR(n){
+    return '₹' + n.toLocaleString('en-IN');
+  }
+
+  function recalc(){
+    let subtotal = 0;
+    document.querySelectorAll('.cart-item').forEach(item=>{
+      const price = parseInt(item.dataset.price,10);
+      const qty = parseInt(item.querySelector('input').value,10);
+      const total = price*qty;
+      item.querySelector('.total-cell').lastChild ? null : null;
+      item.querySelector('.total-cell').textContent = formatINR(total);
+      // re-add pseudo content workaround not needed since ::before is CSS
+      subtotal += total;
+    });
+    document.querySelector('.summary-row span:nth-child(2)').textContent; // no-op
+  }
+
+  document.querySelectorAll('.qty-plus').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const input = btn.previousElementSibling;
+      input.value = parseInt(input.value,10)+1;
+      updateItemTotal(btn.closest('.cart-item'));
+    });
+  });
+  document.querySelectorAll('.qty-minus').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const input = btn.nextElementSibling;
+      const val = parseInt(input.value,10);
+      if(val>1){ input.value = val-1; updateItemTotal(btn.closest('.cart-item')); }
+    });
+  });
+
+  function updateItemTotal(item){
+    const price = parseInt(item.dataset.price,10);
+    const qty = parseInt(item.querySelector('input').value,10);
+    item.querySelector('.total-cell').textContent = formatINR(price*qty);
+  }
+</script>
+
+</body>
+</html>

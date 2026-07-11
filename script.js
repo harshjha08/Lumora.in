@@ -80,6 +80,7 @@ Data.HeroProducts.forEach((product, index) => {
    
     let card = document.createElement("div");
     card.classList.add("product-box");
+    card.setAttribute("data-pid", product.pId);
     // calculateDiscount(product.pDiscount);
     let originalPrice = calculateDiscount(product);
     card.innerHTML = `
@@ -317,13 +318,15 @@ document.getElementById('authForm').addEventListener('submit', e => e.preventDef
 let viewProduct = document.querySelectorAll(".product-image");
 viewProduct.forEach((product) => {
     product.addEventListener("click", () => {
-        window.location.href = "productView.html";
+        let pid = product.closest(".product-box").getAttribute("data-pid");
+        window.location.href = "productView.html?id=" + pid;
     })
 })
 
 let buyBtn = document.querySelectorAll(".buy-btn");
 buyBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
-        window.location.href = "productView.html";
+        let pid = btn.closest(".product-box").getAttribute("data-pid");
+        window.location.href = "productView.html?id=" + pid;
     })
 })

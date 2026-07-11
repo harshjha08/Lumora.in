@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heritage Banarasi Silk Saree | LUMORA</title>
-<meta name="theme-color" content="#D4B483">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -36,7 +35,7 @@
     margin:0;
     font-family:'Poppins', sans-serif;
     color:var(--text-dark);
-    background: #F8F6F2;
+    background:var(--white);
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
     width:100%;
@@ -324,9 +323,9 @@
     overflow-x:auto; scroll-behavior:smooth; scrollbar-width:none;
   }
   .related-grid::-webkit-scrollbar{ display:none; }
-  .product-card{ min-width:0; }
-  .card-image{ position:relative; aspect-ratio:3/4; border-radius:var(--radius-sm); overflow:hidden; }
-  .card-image .photo-panel{ width:100%; height:100%; }
+  .product-card{ min-width:0; cursor:pointer; }
+  .card-image{ position:relative; aspect-ratio:3/4; border-radius:var(--radius-sm); overflow:hidden; background:var(--cream); }
+  .card-image img{ width:100%; height:100%; object-fit:cover; }
   .wishlist-heart{
     position:absolute; top:10px; right:10px; z-index:2;
     width:32px; height:32px; border-radius:50%; background:rgba(255,255,255,.92);
@@ -436,7 +435,7 @@
 <!-- ================= Header ================= -->
 <header class="site-header">
   <div class="header-inner">
-    <a href="#" class="logo">LUMORA</a>
+    <a href="index.html" class="logo">LUMORA</a>
 
     <button class="hamburger icon-btn" id="hamburgerBtn" aria-label="Toggle menu">
       <span data-icon="menu" class="icon"></span>
@@ -472,9 +471,9 @@
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <a href="index.html">Home</a>
   <span>›</span>
-  <a href="#">Sarees</a>
+  <span class="current" id="breadcrumbCategory">Sarees</span>
   <span>›</span>
-  <span class="current">Heritage Banarasi Silk Saree</span>
+  <span class="current" id="breadcrumbProduct">Heritage Banarasi Silk Saree</span>
 </nav>
 
 <main>
@@ -485,7 +484,7 @@
 
       <div class="main-image-wrap">
         <div class="main-image" id="mainImage">
-          <span class="badge-bestseller">Best Seller</span>
+          <span class="badge-bestseller" id="productBadge" style="display:none;">Best Seller</span>
           <div class="photo-panel theme-wine" id="mainPhotoPanel">
             <span data-icon="gem" class="motif-icon"></span>
           </div>
@@ -515,11 +514,11 @@
 
       <div class="prepaid-banner">
         <span data-icon="tag" class="icon"></span>
-        <span>Get it for <strong>₹15,299</strong> with Prepaid Order</span>
+        <span id="prepaidText">Get it for <strong>₹15,299</strong> with Prepaid Order</span>
       </div>
 
       <div class="color-section">
-        <p class="label">Color: <span>Royal Wine Red</span></p>
+        <p class="label">Color: <span id="colorNameLabel">Royal Wine Red</span></p>
         <div class="color-swatches" id="colorSwatches">
           <button class="swatch active" style="--swatch-color:#6e1330" aria-label="Royal Wine Red"><span></span></button>
         </div>
@@ -527,7 +526,7 @@
 
       <div class="highlights">
         <p class="label">Highlights</p>
-        <ul>
+        <ul id="highlightsList">
           <li><span data-icon="spool" class="icon"></span> Pure Handwoven Banarasi Silk</li>
           <li><span data-icon="gem" class="icon"></span> Antique Gold Zari Weaving</li>
           <li><span data-icon="wave" class="icon"></span> Grand Woven Pallu</li>
@@ -537,8 +536,8 @@
       </div>
 
       <div class="dimensions-row">
-        <div class="dimension-box"><p class="label">Saree Length</p><p class="value">5.5 MTR</p></div>
-        <div class="dimension-box"><p class="label">Blouse Piece</p><p class="value">0.8 MTR</p></div>
+        <div class="dimension-box"><p class="label" id="dim1Label">Saree Length</p><p class="value" id="dim1Value">5.5 MTR</p></div>
+        <div class="dimension-box"><p class="label" id="dim2Label">Blouse Piece</p><p class="value" id="dim2Value">0.8 MTR</p></div>
       </div>
 
       <div class="quantity-row">
@@ -582,10 +581,10 @@
       </div>
 
       <div class="tabs-body">
-        <div class="tab-content" data-content="description">
+        <div class="tab-content" data-content="description" id="descriptionTab">
           <p>Experience timeless elegance with our Heritage Banarasi Silk Saree, crafted from the finest Banarasi silk and adorned with intricate antique gold zari weaving.</p>
           <p>The rich royal wine red hue, luxurious border, and grand pallu reflect true heritage craftsmanship, perfect for weddings, festivities, and grand celebrations.</p>
-          <div class="feature-icons-row">
+          <div class="feature-icons-row" id="featureIconsRow">
             <div class="fi"><span data-icon="spool" class="icon"></span><span>Handwoven Excellence</span></div>
             <div class="fi"><span data-icon="leaf" class="icon"></span><span>Pure Banarasi Silk</span></div>
             <div class="fi"><span data-icon="gem" class="icon"></span><span>Antique Gold Zari</span></div>
@@ -595,7 +594,7 @@
         </div>
 
         <div class="tab-content" data-content="details" hidden>
-          <ul class="details-list">
+          <ul class="details-list" id="detailsList">
             <li><span>Fabric</span><span>Pure Banarasi Silk</span></li>
             <li><span>Weave</span><span>Antique Gold Zari</span></li>
             <li><span>Saree Length</span><span>5.5 Metres</span></li>
@@ -606,7 +605,7 @@
           </ul>
         </div>
 
-        <div class="tab-content" data-content="fabric" hidden>
+        <div class="tab-content" data-content="fabric" hidden id="fabricCareTab">
           <p>Dry clean only to preserve the silk's sheen and the integrity of the zari work.</p>
           <p>Store folded in a muslin or cotton cloth away from direct sunlight. Avoid contact with perfume and water to prevent tarnishing of the gold zari threads.</p>
         </div>
@@ -651,8 +650,9 @@
 </main>
 
 <div class="toast" id="toast"></div>
-
+<script src="data.js"></script>
 <script>
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------------- Icon library ---------------- */
@@ -691,14 +691,219 @@ document.addEventListener('DOMContentLoaded', () => {
     return '<svg class="icon' + (extraClass ? ' ' + extraClass : '') + '" viewBox="0 0 24 24">' + body + '</svg>';
   }
 
+  const formatINR = n => '₹' + n.toLocaleString('en-IN');
+
+  function calcOriginalPrice(product){
+    if(product.pDiscount === "NA") return null;
+    const finalPrice = Number(String(product.pPrice).replaceAll(",", ""));
+    const discountPercent = Number(product.pDiscount);
+    return Math.floor(finalPrice / (1 - discountPercent / 100));
+  }
+
+  /* ---------------- Elements shared across functions ---------------- */
+  const mainImage = document.getElementById('mainImage');
+  const mainPhotoPanel = document.getElementById('mainPhotoPanel');
+  const thumbnailList = document.getElementById('thumbnailList');
+
+  /* ---------------- Resolve current product from URL ---------------- */
+  const urlParams = new URLSearchParams(window.location.search);
+  const productId = urlParams.get('id');
+  const currentProduct = (typeof Data !== 'undefined' && productId)
+    ? Data.HeroProducts.find(p => p.pId === productId)
+    : null;
+
+  function buildGallery(product){
+    const images = [product.pMainImage, product.pImage1, product.pImage2, product.pImage3, product.pImage4];
+
+    mainPhotoPanel.className = 'photo-panel';
+    mainPhotoPanel.innerHTML = '<img src="' + images[0] + '" alt="' + product.pName + '" style="width:100%;height:100%;object-fit:cover;">';
+
+    thumbnailList.innerHTML = '';
+    images.forEach((src, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'thumb' + (i === 0 ? ' active' : '');
+      btn.innerHTML = '<img src="' + src + '" alt="thumb" style="width:100%;height:100%;object-fit:cover;">';
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+        mainPhotoPanel.innerHTML = '<img src="' + src + '" alt="' + product.pName + '" style="width:100%;height:100%;object-fit:cover;">';
+      });
+      thumbnailList.appendChild(btn);
+    });
+  }
+
+  function populateProductDetails(product){
+    document.title = product.pName + " | LUMORA";
+    document.getElementById('breadcrumbCategory').textContent = product.pCategory;
+    document.getElementById('breadcrumbProduct').textContent = product.pName;
+
+    document.querySelector('.eyebrow').textContent = product.pTag;
+    document.querySelector('.product-info h1').textContent = product.pName;
+    document.querySelector('.subtitle').textContent = product.pFabric + " in " + product.pColorName;
+
+    const ratingRow = document.querySelector('.rating-row');
+    ratingRow.querySelectorAll('span')[2].textContent = "| " + product.pRiview + " Reviews";
+
+    // Badge (Best Seller / Trending / Hot Deal / New Arrival)
+    const badgeEl = document.getElementById('productBadge');
+    if(product.pBadge){
+      badgeEl.textContent = product.pBadge;
+      badgeEl.style.display = "";
+    } else {
+      badgeEl.style.display = "none";
+    }
+
+    // Price
+    document.querySelector('.price-current').textContent = "₹" + product.pPrice;
+    const original = calcOriginalPrice(product);
+    const priceOriginalEl = document.querySelector('.price-original');
+    const priceOffEl = document.querySelector('.price-off');
+    const currentNumeric = Number(String(product.pPrice).replaceAll(",", ""));
+    if(original){
+      priceOriginalEl.textContent = "₹" + original.toLocaleString('en-IN');
+      priceOffEl.textContent = product.pDiscount + "% OFF";
+      priceOriginalEl.style.display = "";
+      priceOffEl.style.display = "";
+    } else {
+      priceOriginalEl.style.display = "none";
+      priceOffEl.style.display = "none";
+    }
+
+    // Prepaid banner (extra 10% off, rounded down)
+    const prepaidPrice = Math.floor(currentNumeric * 0.9);
+    document.getElementById('prepaidText').innerHTML = 'Get it for <strong>' + formatINR(prepaidPrice) + '</strong> with Prepaid Order';
+
+    // Color swatch
+    document.getElementById('colorNameLabel').textContent = product.pColorName;
+    const swatchWrap = document.getElementById('colorSwatches');
+    swatchWrap.innerHTML = '<button class="swatch active" style="--swatch-color:' + product.pColorHex + '" aria-label="' + product.pColorName + '"><span></span></button>';
+
+    // Highlights
+    const highlightsList = document.getElementById('highlightsList');
+    highlightsList.innerHTML = '';
+    product.pHighlights.forEach(h => {
+      const li = document.createElement('li');
+      li.innerHTML = iconMarkup(h.icon) + ' ' + h.text;
+      highlightsList.appendChild(li);
+    });
+
+    // Dimension boxes
+    document.getElementById('dim1Label').textContent = product.pDim1Label;
+    document.getElementById('dim1Value').textContent = product.pDim1Value;
+    document.getElementById('dim2Label').textContent = product.pDim2Label;
+    document.getElementById('dim2Value').textContent = product.pDim2Value;
+
+    // Description tab
+    const descTab = document.getElementById('descriptionTab');
+    descTab.querySelectorAll('p').forEach(p => p.remove());
+    const p1 = document.createElement('p');
+    p1.textContent = product.pDesc;
+    const p2 = document.createElement('p');
+    p2.textContent = "Crafted from " + product.pFabric + " in " + product.pColorName + ", perfect for " + product.pOccasion + ".";
+    descTab.insertBefore(p2, descTab.firstChild);
+    descTab.insertBefore(p1, descTab.firstChild);
+
+    // Feature icons row inside description tab (first 5 highlights reused as quick icons)
+    const featureIconsRow = document.getElementById('featureIconsRow');
+    featureIconsRow.innerHTML = '';
+    product.pHighlights.slice(0, 5).forEach(h => {
+      const fi = document.createElement('div');
+      fi.className = 'fi';
+      fi.innerHTML = iconMarkup(h.icon) + '<span>' + h.text + '</span>';
+      featureIconsRow.appendChild(fi);
+    });
+
+    // Details tab
+    const detailsList = document.getElementById('detailsList');
+    detailsList.innerHTML =
+      '<li><span>Category</span><span>' + product.pCategory + '</span></li>' +
+      '<li><span>Fabric / Material</span><span>' + product.pFabric + '</span></li>' +
+      '<li><span>Color</span><span>' + product.pColorName + '</span></li>' +
+      '<li><span>' + product.pDim1Label + '</span><span>' + product.pDim1Value + '</span></li>' +
+      '<li><span>' + product.pDim2Label + '</span><span>' + product.pDim2Value + '</span></li>' +
+      '<li><span>Occasion</span><span>' + product.pOccasion + '</span></li>' +
+      '<li><span>Country of Origin</span><span>India</span></li>';
+
+    // Fabric & Care tab
+    const careTab = document.getElementById('fabricCareTab');
+    careTab.innerHTML = '';
+    product.pCareInstructions.forEach(line => {
+      const p = document.createElement('p');
+      p.textContent = line;
+      careTab.appendChild(p);
+    });
+  }
+
+  /* ---------------- Related products (same category, real data) ---------------- */
+  const relatedGrid = document.getElementById('relatedGrid');
+
+  function buildRelatedProducts(product){
+    relatedGrid.innerHTML = '';
+    const pool = (typeof Data !== 'undefined') ? Data.HeroProducts : [];
+    let related = pool.filter(p => p.pId !== product.pId && p.pCategory === product.pCategory);
+
+    // If fewer than 5 in the same category, fill up with other products
+    if(related.length < 5){
+      const extras = pool.filter(p => p.pId !== product.pId && !related.includes(p));
+      related = related.concat(extras).slice(0, 5);
+    } else {
+      related = related.slice(0, 5);
+    }
+
+    related.forEach(p => {
+      const originalPrice = calcOriginalPrice(p);
+      const currentPrice = Number(String(p.pPrice).replaceAll(",", ""));
+
+      const card = document.createElement('article');
+      card.className = 'product-card';
+      card.innerHTML =
+        '<div class="card-image">' +
+          '<button class="wishlist-heart" aria-label="Add ' + p.pName + ' to wishlist">' + iconMarkup('heart') + '</button>' +
+          '<img src="' + p.pMainImage + '" alt="' + p.pName + '">' +
+        '</div>' +
+        '<div class="card-info">' +
+          '<h3>' + p.pName + '</h3>' +
+          '<div class="card-price">' +
+            '<span class="current">' + formatINR(currentPrice) + '</span>' +
+            (originalPrice ? '<span class="original">' + formatINR(originalPrice) + '</span><span class="off">' + p.pDiscount + '% OFF</span>' : '') +
+          '</div>' +
+          '<div class="card-rating"><span class="stars">★★★★★</span><span>' + Number(p.pRating).toFixed(1) + '</span><span>(' + p.pRiview + ')</span></div>' +
+        '</div>';
+
+      card.addEventListener('click', (e) => {
+        if(e.target.closest('.wishlist-heart')) return;
+        window.location.href = 'productView.html?id=' + p.pId;
+      });
+
+      const heartBtn = card.querySelector('.wishlist-heart');
+      let active = false;
+      heartBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        active = !active;
+        heartBtn.classList.toggle('active', active);
+        wishlistCount += active ? 1 : -1;
+        updateCounters();
+        showToast(active ? p.pName + ' added to wishlist' : p.pName + ' removed from wishlist', 'heart');
+      });
+
+      relatedGrid.appendChild(card);
+    });
+  }
+
+  if(currentProduct){
+    buildGallery(currentProduct);
+    populateProductDetails(currentProduct);
+    buildRelatedProducts(currentProduct);
+  }
+
+  /* Convert any remaining static data-icon spans (e.g. features strip, tabs, trust bar) */
   document.querySelectorAll('[data-icon]').forEach(el => {
     const name = el.getAttribute('data-icon');
     const extra = el.getAttribute('class') && el.getAttribute('class').replace('icon','').trim();
     el.outerHTML = iconMarkup(name, extra);
   });
 
-  /* ---------------- Helpers ---------------- */
-  const formatINR = n => '₹' + n.toLocaleString('en-IN');
+  /* ---------------- Toast ---------------- */
   const toast = document.getElementById('toast');
   let toastTimer;
   function showToast(msg, icon){
@@ -713,36 +918,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainNav = document.getElementById('mainNav');
   hamburgerBtn.addEventListener('click', () => mainNav.classList.toggle('open'));
 
-  /* ---------------- Gallery / thumbnails ---------------- */
-  const thumbnailData = [
-    { theme:'wine', size:'20px', label:'Full drape view' },
-    { theme:'wine', size:'9px',  label:'Pallu close-up' },
-    { theme:'wine', size:'7px',  label:'Border weave detail' },
-    { theme:'wine', size:'13px', label:'Zari thread detail' },
-    { theme:'cream', size:'20px', label:'Packaging' }
-  ];
-
-  const thumbnailList = document.getElementById('thumbnailList');
-  const mainPhotoPanel = document.getElementById('mainPhotoPanel');
-
-  thumbnailData.forEach((data, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'thumb' + (i === 0 ? ' active' : '');
-    btn.setAttribute('aria-label', data.label);
-    btn.innerHTML = '<div class="photo-panel theme-' + data.theme + '" style="--dot-size:' + data.size + '">' +
-      iconMarkup(data.theme === 'cream' ? 'gift' : 'gem', 'motif-icon') + '</div>';
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-      btn.classList.add('active');
-      mainPhotoPanel.className = 'photo-panel theme-' + data.theme;
-      mainPhotoPanel.style.setProperty('--dot-size', data.size);
-      mainPhotoPanel.innerHTML = iconMarkup(data.theme === 'cream' ? 'gift' : 'gem', 'motif-icon');
-    });
-    thumbnailList.appendChild(btn);
-  });
-
   /* Cursor-follow zoom on main image */
-  const mainImage = document.getElementById('mainImage');
   mainImage.addEventListener('mousemove', e => {
     const rect = mainImage.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -799,7 +975,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------------- Share ---------------- */
   document.getElementById('shareBtn').addEventListener('click', async () => {
-    const shareData = { title: 'Heritage Banarasi Silk Saree', text: 'Pure Banarasi Silk with Antique Gold Zari', url: window.location.href };
+    const shareTitle = currentProduct ? currentProduct.pName : 'Heritage Banarasi Silk Saree';
+    const shareText = currentProduct ? currentProduct.pDesc : 'Pure Banarasi Silk with Antique Gold Zari';
+    const shareData = { title: shareTitle, text: shareText, url: window.location.href };
     if (navigator.share) {
       try { await navigator.share(shareData); } catch (e) { /* cancelled */ }
     } else {
@@ -824,47 +1002,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------------- Related products ---------------- */
-  const relatedProducts = [
-    { name:'Rangrez Banarasi Silk Saree', price:15999, original:19999, off:20, rating:5.0, reviews:186, theme:'purple' },
-    { name:'Mehfil Banarasi Silk Saree',  price:14999, original:18999, off:21, rating:5.0, reviews:132, theme:'green' },
-    { name:'Noor Banarasi Silk Saree',    price:16499, original:20999, off:21, rating:5.0, reviews:201, theme:'navy' },
-    { name:'Zeenat Banarasi Silk Saree',  price:15499, original:19999, off:22, rating:5.0, reviews:268, theme:'red' },
-    { name:'Ira Banarasi Silk Saree',     price:14999, original:18999, off:21, rating:5.0, reviews:117, theme:'teal' }
-  ];
-
-  const relatedGrid = document.getElementById('relatedGrid');
-  relatedProducts.forEach(p => {
-    const card = document.createElement('article');
-    card.className = 'product-card';
-    card.innerHTML =
-      '<div class="card-image theme-' + p.theme + '">' +
-        '<button class="wishlist-heart" aria-label="Add ' + p.name + ' to wishlist">' + iconMarkup('heart') + '</button>' +
-        '<div class="photo-panel">' + iconMarkup('gem', 'motif-icon') + '</div>' +
-      '</div>' +
-      '<div class="card-info">' +
-        '<h3>' + p.name + '</h3>' +
-        '<div class="card-price">' +
-          '<span class="current">' + formatINR(p.price) + '</span>' +
-          '<span class="original">' + formatINR(p.original) + '</span>' +
-          '<span class="off">' + p.off + '% OFF</span>' +
-        '</div>' +
-        '<div class="card-rating"><span class="stars">★★★★★</span><span>' + p.rating.toFixed(1) + '</span><span>(' + p.reviews + ')</span></div>' +
-      '</div>';
-
-    const heartBtn = card.querySelector('.wishlist-heart');
-    let active = false;
-    heartBtn.addEventListener('click', () => {
-      active = !active;
-      heartBtn.classList.toggle('active', active);
-      wishlistCount += active ? 1 : -1;
-      updateCounters();
-      showToast(active ? p.name + ' added to wishlist' : p.name + ' removed from wishlist', 'heart');
-    });
-
-    relatedGrid.appendChild(card);
-  });
-
   /* Carousel arrows */
   const carouselPrev = document.getElementById('carouselPrev');
   const carouselNext = document.getElementById('carouselNext');
@@ -877,7 +1014,7 @@ document.addEventListener('DOMContentLoaded', () => {
   carouselPrev.addEventListener('click', () => scrollByCard(-1));
   carouselNext.addEventListener('click', () => scrollByCard(1));
 
-  /* Header icon buttons scroll to relevant section */
+  /* Header icon buttons */
   document.getElementById('headerCartBtn').addEventListener('click', () => showToast(cartCount + ' item' + (cartCount === 1 ? '' : 's') + ' in your cart', 'bag'));
   document.getElementById('headerWishlistBtn').addEventListener('click', () => showToast(wishlistCount + ' item' + (wishlistCount === 1 ? '' : 's') + ' in your wishlist', 'heart'));
 
