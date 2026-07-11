@@ -472,6 +472,7 @@ body::-webkit-scrollbar{
     animation: slideDown 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 
 }
+
 /* Login Signup OVERLAY */
 .auth-overlay{
     position:fixed;
