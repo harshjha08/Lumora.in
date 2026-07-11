@@ -352,6 +352,16 @@
   .trust-item .ttitle{ font-size:13px; font-weight:600; }
   .trust-item .tsub{ font-size:11.5px; color:var(--text-light); margin-top:2px; }
 
+  /* ---------- Toast ---------- */
+  .toast{
+    position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(20px);
+    background:var(--black); color:#fff; padding:13px 22px; border-radius:6px;
+    font-size:13.5px; opacity:0; pointer-events:none; transition:opacity .25s, transform .25s;
+    z-index:200; display:flex; align-items:center; gap:10px; white-space:nowrap;
+  }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .toast .icon{ color:var(--gold-soft); width:16px; height:16px; }
+
   /* ---------- Responsive ---------- */
   @media (max-width:1024px){
     .product-section{ flex-direction:column; }
@@ -639,7 +649,7 @@
   </section>
 </main>
 
-
+<div class="toast" id="toast"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
