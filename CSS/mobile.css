@@ -19,15 +19,18 @@
         width: 30px;
         color: #B08D57;
     }
+
     .nav-side-panel{
         position: absolute;
+        display: block;
         top: 85px;
         padding: 0px;
         left: 0;
         height: 80vh;
         width: 0%;
         z-index: 9999;
-        background: #D4B483;
+        background: #F1ECE4;
+        overflow: hidden;
         border-bottom-right-radius: 10px;
         transition: all 0.3s ease-in-out;
     }
@@ -39,7 +42,9 @@
         height: 80vh;
         width: 50%;
         z-index: 9999;
-        background: #D4B483;
+        background: #F1ECE4;
+        box-shadow: 0 15px 35px rgba(176,141,87,0.35) ;
+     
         border-bottom-right-radius: 10px;
     }
     .mobile-nav{
