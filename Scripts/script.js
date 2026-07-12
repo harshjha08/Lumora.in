@@ -501,4 +501,20 @@ let sidePanelBtn = document.querySelector(".menu-box");
 let sidePanel = document.querySelector(".nav-side-panel");
 sidePanelBtn.addEventListener("click", () => {
     sidePanel.classList.toggle("active");
+    sidePanelBtn.classList.toggle("active");
 });
+
+let loadBtn = document.getElementById("loadBtn");
+loadBtn.addEventListener("click", () => {
+    let currentCount = productContainer.querySelectorAll(".product-box").length;
+    let nextProducts = shuffleArray(Data.HeroProducts).slice(currentCount, currentCount + DISPLAY_COUNT);   
+});
+
+// let catogoryButtons = document.querySelectorAll(".catogory-btns");
+// catogoryButtons.forEach(button => {
+//     button.addEventListener("click", () => {
+//         let category = button.getAttribute("data-category");
+//         let filteredProducts = Data.HeroProducts.filter(product => product.pCategory === category);
+//         renderProducts(filteredProducts);
+//     });
+// } );

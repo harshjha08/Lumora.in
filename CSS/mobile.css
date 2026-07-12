@@ -110,6 +110,19 @@
         display: flex;
         flex-direction: column;
         overflow-x: auto;
+       
+    }
+    #all-cat{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        overflow-x: auto;
+        margin-left: 290px;
+    }
+    .catogory-btns{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .catogory-box::-webkit-scrollbar{
         display: none;
