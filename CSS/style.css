@@ -60,7 +60,6 @@ body::-webkit-scrollbar{
     width: 100%;
     padding: 10px 20px;
     box-shadow: 0 18px 30px -12px  rgba(176,141,87,0.45);
-    
     position: fixed;
     z-index: 99999;
     background: var(--bg-secondary);
