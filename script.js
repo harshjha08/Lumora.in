@@ -2,17 +2,18 @@ let loggedIn = false;
 const SavedUserName = "harshjha08";
 const SavedUserPassword = "user123";
 
-window.addEventListener("load",()=>{
+window.addEventListener("load", () => {
 
-    const preloader=document.querySelector(".preloader");
+    const preloader = document.querySelector(".preloader");
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
         preloader.classList.add("hide");
 
-    },4000);
+    }, 4000);
 
 });
+
 // ---- Banner and Promo side bar Images Sliding
 let Bannerimage = document.querySelector(".banner-container");
 const ImageDot = document.querySelectorAll(".dot");
@@ -30,17 +31,17 @@ const sideBarImages = [
     "sidePromoImg/promoimg4.jpeg"
 ];
 let currImage = 0;
-function BannerImageSliding(){
-    
-    if(currImage == bannerImages.length){
+function BannerImageSliding() {
+
+    if (currImage == bannerImages.length) {
         currImage = 0;
     }
     Bannerimage.style.backgroundImage = `url('${bannerImages[currImage]}')`;
     updatedot(currImage);
 }
-function promoImageSliding(){
+function promoImageSliding() {
     currImage++;
-    if(currImage == sideBarImages.length){
+    if (currImage == sideBarImages.length) {
         currImage = 0;
     }
     sideBar.style.backgroundImage = `url('${sideBarImages[currImage]}')`;
@@ -49,16 +50,17 @@ function promoImageSliding(){
 setInterval(() => {
     BannerImageSliding();
     promoImageSliding();
-},3000);
+}, 3000);
+
 // --- Banner Navigation dots
-function updatedot(index){
+function updatedot(index) {
     ImageDot.forEach(dot => {
         dot.classList.remove("active");
     });
     ImageDot[index].classList.add("active");
 };
 
-// --- catogory Buttons 
+// --- catogory Buttons
 const catbtn = document.querySelectorAll(".catogory-btns");
 catbtn.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -71,75 +73,22 @@ catbtn.forEach(btn => {
 });
 
 
+// ================= PRODUCT RENDERING (Shuffle + Limit) ================= //
+const DISPLAY_COUNT = 30;
+let wishListArray = [];
 
-// Rendering Products on UI
-const productContainer = document.querySelector(".products-display");
-let counter = 1;
-Data.HeroProducts.forEach((product, index) => {
-    
-   
-    let card = document.createElement("div");
-    card.classList.add("product-box");
-    card.setAttribute("data-pid", product.pId);
-    // calculateDiscount(product.pDiscount);
-    let originalPrice = calculateDiscount(product);
-    card.innerHTML = `
-        <div class="product-image-box">
-            <div class="supporting-images">
-                <div class="supporting-image">
-                    <img class="supporting-image-div" id="${'SPImage.'+counter+'.1'}" src="${product.pImage1}">
-                </div>
-                <div class="supporting-image">
-                    <img class="supporting-image-div" id="${'SPImage.'+counter+'.2'}" src="${product.pImage2}">
-                </div>
-                <div class="supporting-image">
-                    <img class="supporting-image-div" id="${'SPImage.'+counter+'.3'}" src="${product.pImage3}">
-                </div>
-                <div class="supporting-image">
-                    <img class="supporting-image-div" id="${'SPImage.'+counter+'.4'}" src="${product.pImage4}">
-                </div>
-            </div>
+function shuffleArray(array) {
+    let arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
 
-            <div class="wishlist-btn" id="${product.pId}">
-                <i data-lucide="heart"></i>
-            </div>
-
-            <img class="product-image" id="${'product' + counter}" src="${product.pMainImage}">
-        </div>
-
-        <div class="product-detail-box">
-            <span class="product-tag">${product.pTag}</span>
-            <h3 class="product-title">${product.pName}</h3>
-            <p class="product-desc">${product.pDesc}</p>
-
-            <div class="product-rating-price">
-                <div class="rating">
-                    ⭐⭐⭐⭐⭐
-                    <span>(${product.pRiview})</span>
-                </div>
-
-                <div class="price">
-                    ₹${product.pPrice}
-                    <span>₹${originalPrice}</span>
-                </div>
-            </div>
-            <div class="product-btns">
-                <button class="buy-btn">Buy Now</button>
-                <button class="Cart-btn" id="cart-btn"><i data-lucide="shopping-cart"></i></button>
-            </div>
-        </div>
-        
-    `;
-    counter++;
-
-    productContainer.prepend(card);
-    
-
-});
-
-function calculateDiscount(product){
-    if(product.pDiscount === "NA"){
-        return null; 
+function calculateDiscount(product) {
+    if (product.pDiscount === "NA") {
+        return null;
     }
     let finalPrice = Number(product.pPrice.replaceAll(",", ""));
     let discountPercent = Number(product.pDiscount);
@@ -147,94 +96,156 @@ function calculateDiscount(product){
     return Math.floor(originalPrice);
 }
 
+function buildProductCard(product, counter) {
+    let originalPrice = calculateDiscount(product);
+    return `
+        <div class="product-box" data-pid="${product.pId}">
+            <div class="product-image-box">
+                <div class="supporting-images">
+                    <div class="supporting-image">
+                        <img class="supporting-image-div" id="SPImage.${counter}.1" src="${product.pImage1}">
+                    </div>
+                    <div class="supporting-image">
+                        <img class="supporting-image-div" id="SPImage.${counter}.2" src="${product.pImage2}">
+                    </div>
+                    <div class="supporting-image">
+                        <img class="supporting-image-div" id="SPImage.${counter}.3" src="${product.pImage3}">
+                    </div>
+                    <div class="supporting-image">
+                        <img class="supporting-image-div" id="SPImage.${counter}.4" src="${product.pImage4}">
+                    </div>
+                </div>
 
+                <div class="wishlist-btn" id="${product.pId}">
+                    <i data-lucide="heart"></i>
+                </div>
 
-// --- wish list btn
-let wishListBtn = document.querySelectorAll(".wishlist-btn");
-let wishListArray = [];
-wishListBtn.forEach(btn => {
-    btn.addEventListener("click", () => {
-        
-        let wishListProductId = btn.getAttribute("id");
-        if(!loggedIn){
+                <img class="product-image" id="product${counter}" src="${product.pMainImage}">
+            </div>
+
+            <div class="product-detail-box">
+                <span class="product-tag">${product.pTag}</span>
+                <h3 class="product-title">${product.pName}</h3>
+                <p class="product-desc">${product.pDesc}</p>
+
+                <div class="product-rating-price">
+                    
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(${product.pRiview})</span>
+                    </div>
+                    <div class="price">
+                        ₹${product.pPrice}
+                        <span>₹${originalPrice}</span>
+                    </div>
+                </div>
+                <div class="product-btns">
+                    <button class="buy-btn">Buy Now</button>
+                    <button class="Cart-btn" id="cart-btn"><i data-lucide="shopping-cart"></i></button>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+const productContainer = document.querySelector(".products-display");
+
+function renderProducts(productList) {
+    let counter = 1;
+    let html = "";
+    // reversed so it visually matches the original "prepend" order
+    [...productList].reverse().forEach(product => {
+        html += buildProductCard(product, counter);
+        counter++;
+    });
+    productContainer.innerHTML = html;
+    lucide.createIcons();
+}
+
+// ---- Initial load: shuffle ALL products, show only first 30 ----
+let displayedProducts = shuffleArray(Data.HeroProducts).slice(0, DISPLAY_COUNT);
+renderProducts(displayedProducts);
+
+// ================= EVENT DELEGATION (works for any rendered card, old or new) ================= //
+productContainer.addEventListener("click", (e) => {
+
+    // ---- Wishlist ----
+    let wishBtn = e.target.closest(".wishlist-btn");
+    if (wishBtn) {
+        if (!loggedIn) {
             openAuthModal();
-        }else{
-            btn.classList.toggle("active");
+        } else {
+            wishBtn.classList.toggle("active");
             showPopup("added to wishlist");
         }
-    });
-});
-function showWishList(){
-    console.log(wishListArray);
-};
+        return;
+    }
 
-// add to cart btn
-let cartBtn = document.querySelectorAll(".Cart-btn");
-cartBtn.forEach(btn => {
-    btn.addEventListener("click", () => {
-        
-        let prductIdCart = btn.getAttribute("id");
-        if(!loggedIn){
+    // ---- Cart ----
+    let cartBtn = e.target.closest(".Cart-btn");
+    if (cartBtn) {
+        if (!loggedIn) {
             openAuthModal();
-        }else{
+        } else {
             showPopup("added to Cart");
         }
-    });
-});
+        return;
+    }
 
-
-// is code ki baat kar raha hu mein claude please solve this 
-// --- Supporting image click: swap it with the currently shown main image
-let supportingImageDiv = document.querySelectorAll(".supporting-image-div");
-supportingImageDiv.forEach(div => {
-    div.addEventListener("click", () => {
-    
-        // id looks like "SPImage.3.2" -> we only need the product number ("3")
-        let [ , productNumber ] = div.id.split(".");
+    // ---- Supporting image swap ----
+    let suppImg = e.target.closest(".supporting-image-div");
+    if (suppImg) {
+        let [, productNumber] = suppImg.id.split(".");
         let mainImage = document.getElementById("product" + productNumber);
-
-        // swap srcs: clicked image becomes main, old main takes its spot
         let oldMainSrc = mainImage.src;
-        mainImage.src = div.src;
-        div.src = oldMainSrc;
-    });
+        mainImage.src = suppImg.src;
+        suppImg.src = oldMainSrc;
+        return;
+    }
+
+    // ---- Main image click -> product view ----
+    let mainImgClick = e.target.closest(".product-image");
+    if (mainImgClick) {
+        let pid = mainImgClick.closest(".product-box").getAttribute("data-pid");
+        window.location.href = "productView.html?id=" + pid;
+        return;
+    }
+
+    // ---- Buy Now ----
+    let buyBtn = e.target.closest(".buy-btn");
+    if (buyBtn) {
+        let pid = buyBtn.closest(".product-box").getAttribute("data-pid");
+        window.location.href = "productView.html?id=" + pid;
+        return;
+    }
 });
 
+function showWishList() {
+    console.log(wishListArray);
+}
 
 
 // ==============================
-// Elements
+// Auth Modal Elements
 // ==============================
-
-
 
 const authOverlay = document.querySelector(".auth-overlay");
-
 const closeBtn = document.querySelector(".close-auth");
 
-
-
-// ==============================
-// Open Modal
-// ==============================
-function openAuthModal(){ 
+function openAuthModal() {
     authOverlay.classList.add("active");
     document.body.style.overflow = "hidden";
 }
-// ==============================
-// Close Modal
-// ==============================
 
 closeBtn.addEventListener("click", closeModal);
 
-function closeModal(){
+function closeModal() {
     authOverlay.classList.remove("active");
     document.body.style.overflow = "auto";
-
 }
 
 let popupContainer = document.querySelector(".popup-msg-box");
-function showPopup(msg){
+function showPopup(msg) {
     let popupBox = document.createElement("div");
     popupBox.classList.add("popupmsg");
     popupBox.innerHTML = `
@@ -248,39 +259,39 @@ function showPopup(msg){
     }, 2000);
 }
 
-// login signup box 
+// login signup box
 const userNameInput = document.getElementById("userNameInput");
-const authPwInput  = document.getElementById('authPasswordInput');
-const authRight  = document.querySelector('.auth-right');
-const authTabs   = document.querySelectorAll('.auth-tab');
+const authPwInput = document.getElementById('authPasswordInput');
+const authRight = document.querySelector('.auth-right');
+const authTabs = document.querySelectorAll('.auth-tab');
 const authSubmit = document.getElementById('authSubmitBtn');
 const authFooter = document.getElementById('authFooterText');
 
 authSubmit.addEventListener("click", () => {
     let userName = userNameInput.value;
     let userPass = authPwInput.value;
-    if(userName == SavedUserName && userPass == SavedUserPassword){
+    if (userName == SavedUserName && userPass == SavedUserPassword) {
         userNameInput.value = "";
         authPwInput.value = "";
         closeModal();
         showPopup("Login Sucessfully");
         loggedIn = "true";
-    }else{
+    } else {
         showInvalidMsg("Invalid User Or Password");
     }
 });
 let alertMsgBox = document.querySelector(".alert-msg");
-function showInvalidMsg(msg){
+function showInvalidMsg(msg) {
     alertMsgBox.innerHTML = msg;
     alertMsgBox.style.display = "flex";
     setTimeout(() => {
         alertMsgBox.style.display = "none";
     }, 2000);
 }
-function setAuthMode(mode){
+function setAuthMode(mode) {
     authTabs.forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
 
-    if(mode === 'signup'){
+    if (mode === 'signup') {
         authRight.classList.add('mode-signup');
         authSubmit.textContent = 'Signup';
         authFooter.innerHTML = 'Already have an account? <a id="authSwitchLink">Login</a>';
@@ -315,18 +326,164 @@ authPwToggle.addEventListener('click', () => {
 document.getElementById('authForm').addEventListener('submit', e => e.preventDefault());
 
 
-let viewProduct = document.querySelectorAll(".product-image");
-viewProduct.forEach((product) => {
-    product.addEventListener("click", () => {
-        let pid = product.closest(".product-box").getAttribute("data-pid");
-        window.location.href = "productView.html?id=" + pid;
-    })
-})
+// ================= LIVE SEARCH ================= //
+const MAX_HISTORY = 6;
+const MAX_SUGGESTIONS = 6;
 
-let buyBtn = document.querySelectorAll(".buy-btn");
-buyBtn.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        let pid = btn.closest(".product-box").getAttribute("data-pid");
-        window.location.href = "productView.html?id=" + pid;
-    })
-})
+function getSearchHistory() {
+    return JSON.parse(localStorage.getItem('lumoraSearchHistory') || '[]');
+}
+function saveSearchHistory(term) {
+    term = term.trim();
+    if (!term) return;
+    let history = getSearchHistory().filter(h => h.toLowerCase() !== term.toLowerCase());
+    history.unshift(term);
+    localStorage.setItem('lumoraSearchHistory', JSON.stringify(history.slice(0, MAX_HISTORY)));
+}
+function clearSearchHistory() {
+    localStorage.removeItem('lumoraSearchHistory');
+}
+
+function getSearchableText(product) {
+    return [
+        product.pName, product.pCategory, product.pTag, product.pDesc,
+        product.pColorName, ...(product.pKeywords || [])
+    ].join(' ').toLowerCase();
+}
+
+function searchProducts(query) {
+    let q = query.trim().toLowerCase();
+    if (!q) return [];
+    return Data.HeroProducts.filter(p => getSearchableText(p).includes(q));
+}
+
+// Renders matched/default products into the grid (searches full 100, not just the displayed 30)
+function filterDisplayedProducts(query) {
+    if (!query.trim()) {
+        renderProducts(displayedProducts); // wapas original shuffled 30
+        return;
+    }
+    let results = searchProducts(query); // full Data.HeroProducts search
+    renderProducts(results);
+}
+
+function renderDropdown(dropdown, query) {
+    dropdown.innerHTML = "";
+
+    if (!query.trim()) {
+        let history = getSearchHistory();
+        if (history.length === 0) {
+            dropdown.classList.remove('active');
+            return;
+        }
+        let header = document.createElement('div');
+        header.classList.add('search-dropdown-header');
+        header.innerHTML = `<span>Recent Searches</span><button class="clear-history-btn">Clear</button>`;
+        dropdown.appendChild(header);
+
+        history.forEach(term => {
+            let item = document.createElement('div');
+            item.classList.add('search-dropdown-item', 'history-item');
+            item.innerHTML = `<i data-lucide="history"></i><span>${term}</span>`;
+            item.addEventListener('click', () => selectSearchTerm(term, dropdown));
+            dropdown.appendChild(item);
+        });
+
+        header.querySelector('.clear-history-btn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            clearSearchHistory();
+            renderDropdown(dropdown, query);
+        });
+
+        dropdown.classList.add('active');
+        lucide.createIcons();
+        return;
+    }
+
+    let results = searchProducts(query).slice(0, MAX_SUGGESTIONS);
+
+    if (results.length === 0) {
+        let empty = document.createElement('div');
+        empty.classList.add('search-dropdown-empty');
+        empty.textContent = `No results found for "${query}"`;
+        dropdown.appendChild(empty);
+        dropdown.classList.add('active');
+        return;
+    }
+
+    results.forEach(product => {
+        let item = document.createElement('div');
+        item.classList.add('search-dropdown-item', 'suggestion-item');
+        item.innerHTML = `
+            <img src="${product.pMainImage}" alt="${product.pName}">
+            <div class="suggestion-info">
+                <span class="suggestion-name">${product.pName}</span>
+                <span class="suggestion-category">${product.pCategory}</span>
+            </div>
+            <span class="suggestion-price">₹${product.pPrice}</span>
+        `;
+        item.addEventListener('click', () => {
+            saveSearchHistory(product.pName);
+            window.location.href = "productView.html?id=" + product.pId;
+        });
+        dropdown.appendChild(item);
+    });
+
+    let viewAll = document.createElement('div');
+    viewAll.classList.add('search-dropdown-viewall');
+    viewAll.textContent = `View all results for "${query}"`;
+    viewAll.addEventListener('click', () => selectSearchTerm(query, dropdown));
+    dropdown.appendChild(viewAll);
+
+    dropdown.classList.add('active');
+}
+
+function selectSearchTerm(term, dropdown) {
+    saveSearchHistory(term);
+    let input = dropdown.parentElement.querySelector('input');
+    input.value = term;
+    filterDisplayedProducts(term);
+    dropdown.classList.remove('active');
+}
+
+// Attach a dropdown container to every .search-box (mobile + desktop)
+document.querySelectorAll('.search-box').forEach(box => {
+    let dropdown = document.createElement('div');
+    dropdown.classList.add('search-dropdown');
+    box.appendChild(dropdown);
+
+    let input = box.querySelector('input');
+
+    input.addEventListener('focus', () => {
+        box.classList.add('active');
+        renderDropdown(dropdown, input.value);
+    });
+
+    input.addEventListener('input', () => {
+        renderDropdown(dropdown, input.value);
+        filterDisplayedProducts(input.value);
+    });
+
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            selectSearchTerm(input.value, dropdown);
+            input.blur();
+        }
+        if (e.key === 'Escape') {
+            dropdown.classList.remove('active');
+            box.classList.remove('active');
+            input.blur();
+        }
+    });
+});
+
+// Close dropdown on outside click
+document.addEventListener('click', (e) => {
+    document.querySelectorAll('.search-box').forEach(box => {
+        if (!box.contains(e.target)) {
+            box.querySelector('.search-dropdown')?.classList.remove('active');
+            box.classList.remove('active');
+        }
+    });
+});

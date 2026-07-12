@@ -5,7 +5,7 @@ const Data = {
             pCategory: "Clothing",
             pTag: "LUMORA ATELIER",
             pName: "Premium Linen Co-ord Set",
-            pPrice: "4,999",
+            pPrice: "4,995",
             pDiscount: 20,
             pRating: "5",
             pRiview: 153,
@@ -1185,4 +1185,5 @@ const Data = {
             pDesc: "Handwoven Banarasi silk adorned with timeless antique gold zari craftsmanship."
         }
     ]
+    
 }
