@@ -495,3 +495,10 @@ document.addEventListener('click', (e) => {
         }
     });
 });
+
+// navbar side panel
+let sidePanelBtn = document.querySelector(".menu-box");
+let sidePanel = document.querySelector(".nav-side-panel");
+sidePanelBtn.addEventListener("click", () => {
+    sidePanel.classList.toggle("active");
+});

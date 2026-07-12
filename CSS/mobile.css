@@ -19,6 +19,29 @@
         width: 30px;
         color: #B08D57;
     }
+    .nav-side-panel{
+        position: absolute;
+        top: 85px;
+        padding: 0px;
+        left: 0;
+        height: 80vh;
+        width: 0%;
+        z-index: 9999;
+        background: #D4B483;
+        border-bottom-right-radius: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+    .nav-side-panel.active{
+        position: absolute;
+        top: 85px;
+        padding: 10px;
+        left: 0;
+        height: 80vh;
+        width: 50%;
+        z-index: 9999;
+        background: #D4B483;
+        border-bottom-right-radius: 10px;
+    }
     .mobile-nav{
         width: 100%;
         display: flex;
