@@ -398,6 +398,7 @@ body::-webkit-scrollbar{
     outline: none;
     min-height: 40px;
     transition: .3s ease;
+    
 }
 .catogory-btns.active{
     background: var(--primary-dark);
