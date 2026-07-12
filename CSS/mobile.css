@@ -43,6 +43,9 @@
         /* background: green; */
         
     }
+    .viewMoreBtn{
+        justify-content: center;
+    }
     .catogory-box{
         padding: 10px;
         /* background: red; */
