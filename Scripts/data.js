@@ -6,7 +6,7 @@ const Data = {
             pTag: "LUMORA ATELIER",
             pName: "Premium Linen Co-ord Set",
             pPrice: "4,995",
-            pDiscount: null,
+            pDiscount: 0,
             pRating: "5",
             pRiview: 153,
             pBadge: null,

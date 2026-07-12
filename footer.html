@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumora Footer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0b0b0c;
+    --bg-card: #141416;
+    --gold: #c9a24b;
+    --gold-light: #e6c877;
+    --white: #f5f3ee;
+    --muted: #9a9894;
+    --border: rgba(201,162,75,0.25);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+  }
+
+  .lumora-footer {
+    width: 100%;
+    background: var(--bg);
+    overflow: hidden;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero-section {
+    position: relative;
+    text-align: center;
+    padding: 70px 20px 60px;
+    overflow: hidden;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: 0;
+    width: 260px;
+    height: 100%;
+    background: radial-gradient(ellipse at top, rgba(201,162,75,0.35), transparent 65%);
+    filter: blur(10px);
+    pointer-events: none;
+  }
+  .hero-glow.left { left: -80px; transform: rotate(15deg); }
+  .hero-glow.right { right: -80px; transform: rotate(-15deg); }
+
+  .brand-mark {
+    position: relative;
+    z-index: 1;
+    color: var(--gold);
+    font-size: 22px;
+    margin: 0 auto 6px;
+  }
+  .brand-name {
+    position: relative;
+    z-index: 1;
+    color: var(--gold);
+    font-size: 16px;
+    letter-spacing: 6px;
+    font-weight: 500;
+    margin: 0 0 30px;
+  }
+
+  .hero-title {
+    position: relative;
+    z-index: 1;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    line-height: 1.05;
+    margin: 0;
+    font-size: 68px;
+    color: var(--white);
+  }
+  .hero-title .accent { color: var(--gold); }
+
+  .hero-rule {
+    position: relative;
+    z-index: 1;
+    width: 220px;
+    height: 1px;
+    margin: 28px auto;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  .hero-tagline {
+    position: relative;
+    z-index: 1;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0 0 32px;
+    font-weight: 300;
+  }
+
+  .hero-cta {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 14px 34px;
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 34px;
+    transition: background 0.2s ease;
+  }
+  .hero-cta:hover { background: rgba(201,162,75,0.1); }
+
+  .hero-socials {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-bottom: 18px;
+  }
+  .hero-socials a {
+    color: var(--white);
+    display: flex;
+  }
+  .hero-socials svg { width: 18px; height: 18px; }
+  .hero-socials a:hover { color: var(--gold-light); }
+
+  .hero-made {
+    position: relative;
+    z-index: 1;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    margin: 0;
+  }
+  .hero-made .heart { color: var(--gold); }
+
+  /* ---------- You May Also Like ---------- */
+  .product-block {
+    padding: 50px 20px 20px;
+  }
+
+  .fav-heading {
+    text-align: center;
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .fav-heading::before,
+  .fav-heading::after {
+    content: "";
+    flex: 1;
+    max-width: 90px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold));
+  }
+  .fav-heading::after { background: linear-gradient(to left, transparent, var(--gold)); }
+
+  .product-carousel-wrap {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+  }
+
+  .product-carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 4px 4px 12px;
+    scrollbar-width: none;
+  }
+  .product-carousel::-webkit-scrollbar { display: none; }
+
+  .product-card {
+    flex: 0 0 auto;
+    width: 200px;
+    background: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .product-card-body { padding: 12px 14px 16px; position: relative; }
+
+  .wishlist-btn {
+    position: absolute;
+    top: -180px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.55);
+    border: none;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .product-name {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 0 6px;
+    color: var(--white);
+  }
+  .product-price {
+    font-size: 14px;
+    color: var(--gold-light);
+    font-weight: 500;
+    margin: 0 0 8px;
+  }
+  .shop-now {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .shop-now:hover { color: var(--gold-light); }
+
+  .carousel-arrow {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .carousel-arrow.left { left: -10px; }
+  .carousel-arrow.right { right: -10px; }
+
+  /* ---------- Newsletter Section ---------- */
+  .newsletter-section {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    background: linear-gradient(135deg, #17140f, #0d0c0a);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 40px;
+    gap: 32px;
+  }
+
+  .newsletter-left { flex: 1 1 380px; }
+  .newsletter-eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin: 0 0 10px;
+    text-transform: uppercase;
+  }
+  .newsletter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: var(--gold-light);
+    margin: 0 0 14px;
+    line-height: 1.2;
+  }
+  .newsletter-desc {
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 380px;
+    margin: 0 0 20px;
+    line-height: 1.6;
+  }
+
+  .newsletter-form {
+    display: flex;
+    max-width: 420px;
+  }
+  .newsletter-form input {
+    flex: 1;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    color: var(--white);
+    font-size: 13px;
+    outline: none;
+    min-width: 0;
+  }
+  .newsletter-form input::placeholder { color: var(--muted); }
+  .newsletter-form button {
+    padding: 0 22px;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    border: none;
+    border-radius: 0 8px 8px 0;
+    color: #1a1508;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .newsletter-form button:hover { filter: brightness(1.08); }
+
+  .newsletter-note {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+
+  .newsletter-divider {
+    width: 1px;
+    align-self: stretch;
+    background: var(--border);
+  }
+
+  .newsletter-right {
+    flex: 1 1 220px;
+    text-align: center;
+  }
+  .unlock-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin: 0 0 4px;
+  }
+  .unlock-percent {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 54px;
+    color: var(--gold-light);
+    margin: 0;
+    line-height: 1.05;
+  }
+  .unlock-sub {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-top: 6px;
+  }
+
+  /* ---------- Bottom Nav ---------- */
+  .bottom-nav-wrap {
+    max-width: 500px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .bottom-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 10px 18px;
+    width: 100%;
+  }
+
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    flex: 1;
+    position: relative;
+  }
+  .nav-item.active { color: var(--gold); }
+  .nav-item svg { width: 20px; height: 20px; }
+
+  .nav-item.center {
+    background: radial-gradient(circle, rgba(201,162,75,0.25), transparent 70%);
+    border-radius: 50%;
+    padding: 6px;
+    margin-top: -22px;
+  }
+  .nav-item.center svg { width: 26px; height: 26px; }
+
+  .cart-badge {
+    position: absolute;
+    top: -6px;
+    right: 8px;
+    background: var(--gold);
+    color: #1a1508;
+    font-size: 9px;
+    font-weight: 700;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-copyright {
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    padding: 20px 20px 30px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .hero-title { font-size: 52px; }
+    .newsletter-section { padding: 30px; }
+    .newsletter-divider { display: none; }
+    .newsletter-right { border-top: 1px solid var(--border); padding-top: 20px; }
+  }
+
+  @media (max-width: 600px) {
+    .hero-section { padding: 50px 16px 40px; }
+    .hero-title { font-size: 34px; }
+    .hero-rule { width: 140px; margin: 20px auto; }
+    .hero-tagline { font-size: 13px; }
+    .hero-cta { padding: 12px 26px; font-size: 12px; }
+    .product-block { padding: 40px 14px 14px; }
+    .product-card { width: 150px; }
+    .product-card img { height: 120px; }
+    .newsletter-section { padding: 24px 18px; border-radius: 14px; margin-left: 14px; margin-right: 14px; max-width: calc(100% - 28px); }
+    .newsletter-title { font-size: 26px; }
+    .newsletter-form { max-width: 100%; }
+    .unlock-percent { font-size: 42px; }
+    .carousel-arrow { display: none; }
+    .bottom-nav { padding: 8px 10px; }
+    .nav-item { font-size: 9px; }
+  }
+
+  @media (max-width: 380px) {
+    .hero-title { font-size: 28px; }
+    .product-card { width: 130px; }
+    .product-card img { height: 100px; }
+  }
+</style>
+</head>
+<body>
+
+<footer class="lumora-footer">
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-glow left"></div>
+    <div class="hero-glow right"></div>
+
+    <svg class="brand-mark" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:block;margin:0 auto 8px;">
+      <path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/>
+    </svg>
+    <p class="brand-name">LUMORA</p>
+
+    <h2 class="hero-title">ELEVATE<br><span class="accent">YOUR</span><br>EVERYDAY</h2>
+
+    <div class="hero-rule"></div>
+
+    <p class="hero-tagline">Luxury isn't about price.<br>It's about the experience.</p>
+
+    <a href="#" class="hero-cta">SHOP THE COLLECTION &rarr;</a>
+
+    <div class="hero-socials">
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+      <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 17c1-3 1.5-5 1.5-7a3 3 0 1 1 6 0c0 2-1 4-2.5 4-1 0-1.5-.7-1.5-1.6"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="6" width="19" height="12" rx="3"/><path d="M10.5 9.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg></a>
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 4h-2a4 4 0 0 0-4 4v3H7v3h2v6h3v-6h2.5l.5-3H12V8a1 1 0 0 1 1-1h2z"/></svg></a>
+    </div>
+
+    <p class="hero-made">MADE WITH <span class="heart">&#9829;</span> IN INDIA</p>
+  </div>
+
+  <!-- You May Also Like -->
+  <div class="product-block">
+    <p class="fav-heading">You may also like</p>
+    <div class="product-carousel-wrap">
+      <button class="carousel-arrow left" onclick="scrollCarousel(-1)" aria-label="Scroll left">&#8249;</button>
+      <div class="product-carousel" id="carousel">
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80" alt="Luxe Quilted Handbag">
+          <div class="product-card-body">
+            <button class="wishlist-btn" aria-label="Add to wishlist">&#9825;</button>
+            <p class="product-name">Luxe Quilted Handbag</p>
+            <p class="product-price">₹2,499</p>
+            <a href="#" class="shop-now">SHOP NOW &rarr;</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=400&q=80" alt="Classic Noir Watch">
+          <div class="product-card-body">
+            <button class="wishlist-btn" aria-label="Add to wishlist">&#9825;</button>
+            <p class="product-name">Classic Noir Watch</p>
+            <p class="product-price">₹3,999</p>
+            <a href="#" class="shop-now">SHOP NOW &rarr;</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&q=80" alt="Aurea Sunglasses">
+          <div class="product-card-body">
+            <button class="wishlist-btn" aria-label="Add to wishlist">&#9825;</button>
+            <p class="product-name">Aurea Sunglasses</p>
+            <p class="product-price">₹1,799</p>
+            <a href="#" class="shop-now">SHOP NOW &rarr;</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400&q=80" alt="Oud Essence Perfume">
+          <div class="product-card-body">
+            <button class="wishlist-btn" aria-label="Add to wishlist">&#9825;</button>
+            <p class="product-name">Oud Essence Perfume</p>
+            <p class="product-price">₹2,199</p>
+            <a href="#" class="shop-now">SHOP NOW &rarr;</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&q=80" alt="Urban Edge Sneakers">
+          <div class="product-card-body">
+            <button class="wishlist-btn" aria-label="Add to wishlist">&#9825;</button>
+            <p class="product-name">Urban Edge Sneakers</p>
+            <p class="product-price">₹2,999</p>
+            <a href="#" class="shop-now">SHOP NOW &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-arrow right" onclick="scrollCarousel(1)" aria-label="Scroll right">&#8250;</button>
+    </div>
+
+    <!-- Newsletter / Discount -->
+    <div class="newsletter-section">
+      <div class="newsletter-left">
+        <p class="newsletter-eyebrow">Join 100,000+</p>
+        <h3 class="newsletter-title">Happy Customers</h3>
+        <p class="newsletter-desc">Subscribe now &amp; be the first to know about new arrivals, exclusive offers and special discounts.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit">SUBSCRIBE &rarr;</button>
+        </form>
+        <p class="newsletter-note">&#8635; No spam. Unsubscribe anytime.</p>
+      </div>
+
+      <div class="newsletter-divider"></div>
+
+      <div class="newsletter-right">
+        <p class="unlock-label">UNLOCK</p>
+        <p class="unlock-percent">10%<br>OFF</p>
+        <p class="unlock-sub">ON YOUR FIRST ORDER</p>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav-wrap">
+      <nav class="bottom-nav">
+        <a href="#" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+          <span>HOME</span>
+        </a>
+        <a href="#" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 8V6a6 6 0 0 1 12 0v2"/><rect x="3" y="8" width="18" height="13" rx="2"/></svg>
+          <span>SHOP</span>
+        </a>
+        <a href="#" class="nav-item center">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.2 6.8H21l-5.6 4 2.2 6.8L12 15.6 6.4 19.6l2.2-6.8L3 8.8h6.8z"/></svg>
+        </a>
+        <a href="#" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M2 3h2l2.4 12.2a2 2 0 0 0 2 1.8h8.7a2 2 0 0 0 2-1.6L21 7H5.2"/></svg>
+          <span class="cart-badge">2</span>
+          <span>CART</span>
+        </a>
+        <a href="#" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          <span>ACCOUNT</span>
+        </a>
+      </nav>
+    </div>
+
+    <p class="footer-copyright">&copy; 2026 Lumora. All rights reserved.</p>
+  </div>
+
+</footer>
+
+<script>
+  function scrollCarousel(direction) {
+    const carousel = document.getElementById('carousel');
+    const cardWidth = carousel.querySelector('.product-card').offsetWidth + 16;
+    carousel.scrollBy({ left: direction * cardWidth * 2, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>

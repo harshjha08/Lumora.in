@@ -367,6 +367,13 @@ function filterDisplayedProducts(query) {
     renderProducts(results);
 }
 
+// ---- NEW: scroll page to the products section ----
+function scrollToProducts() {
+    // productContainer is already defined above as document.querySelector(".products-display")
+    const productsSection = productContainer.closest('section') || productContainer;
+    productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 function renderDropdown(dropdown, query) {
     dropdown.innerHTML = "";
 
@@ -457,6 +464,7 @@ document.querySelectorAll('.search-box').forEach(box => {
     input.addEventListener('focus', () => {
         box.classList.add('active');
         renderDropdown(dropdown, input.value);
+        scrollToProducts(); // ---- NEW: jaise hi search box par focus/click ho, products section tak scroll ----
     });
 
     input.addEventListener('input', () => {
