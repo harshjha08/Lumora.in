@@ -306,7 +306,7 @@ body::-webkit-scrollbar{
     margin-top: 78px;
     width: 100%;
     height: 600px;
-    background-image: url('../assets/Banners/Banner2.png');
+    background-image: url('../Banners/Banner2.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -408,7 +408,7 @@ body::-webkit-scrollbar{
     position: sticky;
     top: 110px;
     left: 20px;
-    background-image: url(../assets/sidePromoImg/promoimg3.jpeg);
+    background-image: url(../sidePromoImg/promoimg3.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
