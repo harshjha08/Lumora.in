@@ -19,16 +19,16 @@ let Bannerimage = document.querySelector(".banner-container");
 const ImageDot = document.querySelectorAll(".dot");
 let sideBar = document.querySelector(".side-bar");
 const bannerImages = [
-    "Banners/Banner2.png",
-    "Banners/Banner1.png",
-    "Banners/Banner5.jpeg",
-    "Banners/Banner7.jpeg"
+    "../assets/Banners/Banner2.png",
+    "../assets/Banners/Banner1.png",
+    "../assets/Banners/Banner5.jpeg",
+    "../assets/Banners/Banner7.jpeg"
 ];
 const sideBarImages = [
-    "sidePromoImg/promoimg1.jpeg",
-    "sidePromoImg/promoimg2.jpeg",
-    "sidePromoImg/promoimg3.jpeg",
-    "sidePromoImg/promoimg4.jpeg"
+    "../assets/sidePromoImg/promoimg1.jpeg",
+    "../assets/sidePromoImg/promoimg2.jpeg",
+    "../assets/sidePromoImg/promoimg3.jpeg",
+    "../assets/sidePromoImg/promoimg4.jpeg"
 ];
 let currImage = 0;
 function BannerImageSliding() {

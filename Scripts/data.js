@@ -30,11 +30,11 @@ const Data = {
                 "Machine wash cold with similar colors; tumble dry on low heat.",
                 "Iron on medium heat while slightly damp for a crisp finish."
             ],
-            pMainImage: "ProductImages/Product1/product01_01.jpeg",
-            pImage1: "ProductImages/Product1/product01_02.jpeg",
-            pImage2: "ProductImages/Product1/product01_03.jpeg",
-            pImage3: "ProductImages/Product1/product01_04.jpeg",
-            pImage4: "ProductImages/Product1/product01_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product1/product01_01.jpeg",
+            pImage1: "../assets/ProductImages/Product1/product01_02.jpeg",
+            pImage2: "../assets/ProductImages/Product1/product01_03.jpeg",
+            pImage3: "../assets/ProductImages/Product1/product01_04.jpeg",
+            pImage4: "../assets/ProductImages/Product1/product01_05.jpeg",
             pDesc: "Breathable Luxury linen with timeless elegance."
         },
         {
@@ -67,11 +67,11 @@ const Data = {
                 "Dry clean recommended to preserve the satin sheen.",
                 "Store on a padded hanger away from direct sunlight."
             ],
-            pMainImage: "ProductImages/Product2/product02_01.jpeg",
-            pImage1: "ProductImages/Product2/product02_02.jpeg",
-            pImage2: "ProductImages/Product2/product02_03.jpeg",
-            pImage3: "ProductImages/Product2/product02_04.jpeg",
-            pImage4: "ProductImages/Product2/product02_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product2/product02_01.jpeg",
+            pImage1: "../assets/ProductImages/Product2/product02_02.jpeg",
+            pImage2: "../assets/ProductImages/Product2/product02_03.jpeg",
+            pImage3: "../assets/ProductImages/Product2/product02_04.jpeg",
+            pImage4: "../assets/ProductImages/Product2/product02_05.jpeg",
             pDesc: "Graceful satin drape designed for elegant evenings."
         },
         {
@@ -104,11 +104,11 @@ const Data = {
                 "Wipe clean with a soft, dry cloth; avoid water contact.",
                 "Store with the dust bag provided when not in use."
             ],
-            pMainImage: "ProductImages/Product3/product03_01.jpeg",
-            pImage1: "ProductImages/Product3/product03_02.jpeg",
-            pImage2: "ProductImages/Product3/product03_03.jpeg",
-            pImage3: "ProductImages/Product3/product03_04.jpeg",
-            pImage4: "ProductImages/Product3/product03_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product3/product03_01.jpeg",
+            pImage1: "../assets/ProductImages/Product3/product03_02.jpeg",
+            pImage2: "../assets/ProductImages/Product3/product03_03.jpeg",
+            pImage3: "../assets/ProductImages/Product3/product03_04.jpeg",
+            pImage4: "../assets/ProductImages/Product3/product03_05.jpeg",
             pDesc: "Premium leather craftsmanship for everyday luxury."
         },
         {
@@ -141,11 +141,11 @@ const Data = {
                 "Wipe with a dry cloth; avoid prolonged exposure to moisture.",
                 "Use a shoe tree to help retain shape when storing."
             ],
-            pMainImage: "ProductImages/Product4/product04_01.jpeg",
-            pImage1: "ProductImages/Product4/product04_02.jpeg",
-            pImage2: "ProductImages/Product4/product04_03.jpeg",
-            pImage3: "ProductImages/Product4/product04_04.jpeg",
-            pImage4: "ProductImages/Product4/product04_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product4/product04_01.jpeg",
+            pImage1: "../assets/ProductImages/Product4/product04_02.jpeg",
+            pImage2: "../assets/ProductImages/Product4/product04_03.jpeg",
+            pImage3: "../assets/ProductImages/Product4/product04_04.jpeg",
+            pImage4: "../assets/ProductImages/Product4/product04_05.jpeg",
             pDesc: "Elegant comfort crafted for all-day confidence."
         },
         {
@@ -178,11 +178,11 @@ const Data = {
                 "Dry clean only to maintain the tailored structure.",
                 "Steam gently to remove creases; avoid direct ironing."
             ],
-            pMainImage: "ProductImages/Product5/product05_01.jpeg",
-            pImage1: "ProductImages/Product5/product05_02.jpeg",
-            pImage2: "ProductImages/Product5/product05_03.jpeg",
-            pImage3: "ProductImages/Product5/product05_04.jpeg",
-            pImage4: "ProductImages/Product5/product05_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product5/product05_01.jpeg",
+            pImage1: "../assets/ProductImages/Product5/product05_02.jpeg",
+            pImage2: "../assets/ProductImages/Product5/product05_03.jpeg",
+            pImage3: "../assets/ProductImages/Product5/product05_04.jpeg",
+            pImage4: "../assets/ProductImages/Product5/product05_05.jpeg",
             pDesc: "Relaxed tailoring with timeless sophistication"
         },
         {
@@ -215,11 +215,11 @@ const Data = {
                 "Dry clean only; avoid direct contact with perfume.",
                 "Store on a padded hanger to prevent creasing."
             ],
-            pMainImage: "ProductImages/Product6/product06_01.jpeg",
-            pImage1: "ProductImages/Product6/product06_02.jpeg",
-            pImage2: "ProductImages/Product6/product06_03.jpeg",
-            pImage3: "ProductImages/Product6/product06_04.jpeg",
-            pImage4: "ProductImages/Product6/product06_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product6/product06_01.jpeg",
+            pImage1: "../assets/ProductImages/Product6/product06_02.jpeg",
+            pImage2: "../assets/ProductImages/Product6/product06_03.jpeg",
+            pImage3: "../assets/ProductImages/Product6/product06_04.jpeg",
+            pImage4: "../assets/ProductImages/Product6/product06_05.jpeg",
             pDesc: "Pure Silk Comfort with refined luxury styling."
         },
         {
@@ -252,11 +252,11 @@ const Data = {
                 "Wipe clean with a leather-specific cloth.",
                 "Avoid direct sunlight and moisture for prolonged periods."
             ],
-            pMainImage: "ProductImages/Product7/product07_01.jpeg",
-            pImage1: "ProductImages/Product7/product07_02.jpeg",
-            pImage2: "ProductImages/Product7/product07_03.jpeg",
-            pImage3: "ProductImages/Product7/product07_04.jpeg",
-            pImage4: "ProductImages/Product7/product07_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product7/product07_01.jpeg",
+            pImage1: "../assets/ProductImages/Product7/product07_02.jpeg",
+            pImage2: "../assets/ProductImages/Product7/product07_03.jpeg",
+            pImage3: "../assets/ProductImages/Product7/product07_04.jpeg",
+            pImage4: "../assets/ProductImages/Product7/product07_05.jpeg",
             pDesc: "Genuine lambskin crafted for bold luxury."
         },
         {
@@ -289,11 +289,11 @@ const Data = {
                 "Clean lenses with a microfiber cloth only.",
                 "Store in the case provided to avoid scratches."
             ],
-            pMainImage: "ProductImages/Product8/product08_01.jpeg",
-            pImage1: "ProductImages/Product8/product08_02.jpeg",
-            pImage2: "ProductImages/Product8/product08_03.jpeg",
-            pImage3: "ProductImages/Product8/product08_04.jpeg",
-            pImage4: "ProductImages/Product8/product08_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product8/product08_01.jpeg",
+            pImage1: "../assets/ProductImages/Product8/product08_02.jpeg",
+            pImage2: "../assets/ProductImages/Product8/product08_03.jpeg",
+            pImage3: "../assets/ProductImages/Product8/product08_04.jpeg",
+            pImage4: "../assets/ProductImages/Product8/product08_05.jpeg",
             pDesc: "Elegant UV protection with timeless style"
         },
         {
@@ -326,11 +326,11 @@ const Data = {
                 "Wipe with a soft, dry cloth to maintain shine.",
                 "Avoid overstuffing to preserve the shape."
             ],
-            pMainImage: "ProductImages/Product9/product09_01.jpeg",
-            pImage1: "ProductImages/Product9/product09_02.jpeg",
-            pImage2: "ProductImages/Product9/product09_03.jpeg",
-            pImage3: "ProductImages/Product9/product09_04.jpeg",
-            pImage4: "ProductImages/Product9/product09_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product9/product09_01.jpeg",
+            pImage1: "../assets/ProductImages/Product9/product09_02.jpeg",
+            pImage2: "../assets/ProductImages/Product9/product09_03.jpeg",
+            pImage3: "../assets/ProductImages/Product9/product09_04.jpeg",
+            pImage4: "../assets/ProductImages/Product9/product09_05.jpeg",
             pDesc: "Minimal luxury designed for effortless elegance."
         },
         {
@@ -363,11 +363,11 @@ const Data = {
                 "Store in a cool, dry place away from direct sunlight.",
                 "Best used within 12 months of opening for optimal scent."
             ],
-            pMainImage: "ProductImages/Product10/product10_01.jpeg",
-            pImage1: "ProductImages/Product10/product10_02.jpeg",
-            pImage2: "ProductImages/Product10/product10_03.jpeg",
-            pImage3: "ProductImages/Product10/product10_04.jpeg",
-            pImage4: "ProductImages/Product10/product10_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product10/product10_01.jpeg",
+            pImage1: "../assets/ProductImages/Product10/product10_02.jpeg",
+            pImage2: "../assets/ProductImages/Product10/product10_03.jpeg",
+            pImage3: "../assets/ProductImages/Product10/product10_04.jpeg",
+            pImage4: "../assets/ProductImages/Product10/product10_05.jpeg",
             pDesc: "A luxuious floral fragrance with warm amber notes"
         },
         {
@@ -400,11 +400,11 @@ const Data = {
                 "Avoid contact with water, perfume and lotions.",
                 "Store separately in the pouch provided to prevent scratches."
             ],
-            pMainImage: "ProductImages/Product11/product11_01.jpeg",
-            pImage1: "ProductImages/Product11/product11_02.jpeg",
-            pImage2: "ProductImages/Product11/product11_03.jpeg",
-            pImage3: "ProductImages/Product11/product11_04.jpeg",
-            pImage4: "ProductImages/Product11/product11_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product11/product11_01.jpeg",
+            pImage1: "../assets/ProductImages/Product11/product11_02.jpeg",
+            pImage2: "../assets/ProductImages/Product11/product11_03.jpeg",
+            pImage3: "../assets/ProductImages/Product11/product11_04.jpeg",
+            pImage4: "../assets/ProductImages/Product11/product11_05.jpeg",
             pDesc: "Elegant pearls paired with brilliant craftsmanship."
         },
         {
@@ -437,11 +437,11 @@ const Data = {
                 "Avoid submerging in water beyond splash resistance.",
                 "Wipe the strap and case with a soft, dry cloth."
             ],
-            pMainImage: "ProductImages/Product12/product12_01.jpeg",
-            pImage1: "ProductImages/Product12/product12_02.jpeg",
-            pImage2: "ProductImages/Product12/product12_03.jpeg",
-            pImage3: "ProductImages/Product12/product12_04.jpeg",
-            pImage4: "ProductImages/Product12/product12_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product12/product12_01.jpeg",
+            pImage1: "../assets/ProductImages/Product12/product12_02.jpeg",
+            pImage2: "../assets/ProductImages/Product12/product12_03.jpeg",
+            pImage3: "../assets/ProductImages/Product12/product12_04.jpeg",
+            pImage4: "../assets/ProductImages/Product12/product12_05.jpeg",
             pDesc: "Timeless precision wrapped in modern elegance."
         },
         {
@@ -474,11 +474,11 @@ const Data = {
                 "Keep away from water, perfumes and harsh chemicals.",
                 "Store flat in the box provided to prevent tangling."
             ],
-            pMainImage: "ProductImages/Product13/product13_01.jpeg",
-            pImage1: "ProductImages/Product13/product13_02.jpeg",
-            pImage2: "ProductImages/Product13/product13_03.jpeg",
-            pImage3: "ProductImages/Product13/product13_04.jpeg",
-            pImage4: "ProductImages/Product13/product13_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product13/product13_01.jpeg",
+            pImage1: "../assets/ProductImages/Product13/product13_02.jpeg",
+            pImage2: "../assets/ProductImages/Product13/product13_03.jpeg",
+            pImage3: "../assets/ProductImages/Product13/product13_04.jpeg",
+            pImage4: "../assets/ProductImages/Product13/product13_05.jpeg",
             pDesc: "Brilliant diamonds crafted for timeless elegance."
         },
         {
@@ -511,11 +511,11 @@ const Data = {
                 "Wipe with a damp cloth; avoid machine washing.",
                 "Use a protective spray to guard against stains."
             ],
-            pMainImage: "ProductImages/Product14/product14_01.jpeg",
-            pImage1: "ProductImages/Product14/product14_02.jpeg",
-            pImage2: "ProductImages/Product14/product14_03.jpeg",
-            pImage3: "ProductImages/Product14/product14_04.jpeg",
-            pImage4: "ProductImages/Product14/product14_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product14/product14_01.jpeg",
+            pImage1: "../assets/ProductImages/Product14/product14_02.jpeg",
+            pImage2: "../assets/ProductImages/Product14/product14_03.jpeg",
+            pImage3: "../assets/ProductImages/Product14/product14_04.jpeg",
+            pImage4: "../assets/ProductImages/Product14/product14_05.jpeg",
             pDesc: "Italian leather comfort with effortless luxury."
         },
         {
@@ -548,11 +548,11 @@ const Data = {
                 "Dry clean only to preserve the cashmere fibers.",
                 "Store folded in a breathable cloth bag."
             ],
-            pMainImage: "ProductImages/Product15/product15_01.jpeg",
-            pImage1: "ProductImages/Product15/product15_02.jpeg",
-            pImage2: "ProductImages/Product15/product15_03.jpeg",
-            pImage3: "ProductImages/Product15/product15_04.jpeg",
-            pImage4: "ProductImages/Product15/product15_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product15/product15_01.jpeg",
+            pImage1: "../assets/ProductImages/Product15/product15_02.jpeg",
+            pImage2: "../assets/ProductImages/Product15/product15_03.jpeg",
+            pImage3: "../assets/ProductImages/Product15/product15_04.jpeg",
+            pImage4: "../assets/ProductImages/Product15/product15_05.jpeg",
             pDesc: "Ultra-soft cashmere crafted for everyday sophistication."
         },
         {
@@ -585,11 +585,11 @@ const Data = {
                 "Wipe clean with a soft, dry cloth.",
                 "Avoid overloading to maintain the bag's structure."
             ],
-            pMainImage: "ProductImages/Product16/product16_01.jpeg",
-            pImage1: "ProductImages/Product16/product16_02.jpeg",
-            pImage2: "ProductImages/Product16/product16_03.jpeg",
-            pImage3: "ProductImages/Product16/product16_04.jpeg",
-            pImage4: "ProductImages/Product16/product16_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product16/product16_01.jpeg",
+            pImage1: "../assets/ProductImages/Product16/product16_02.jpeg",
+            pImage2: "../assets/ProductImages/Product16/product16_03.jpeg",
+            pImage3: "../assets/ProductImages/Product16/product16_04.jpeg",
+            pImage4: "../assets/ProductImages/Product16/product16_05.jpeg",
             pDesc: "Elegant functionality crafted from premium Italian leather."
         },
         {
@@ -622,11 +622,11 @@ const Data = {
                 "Machine wash cold; hang dry to retain shape.",
                 "Iron on medium heat for a crisp finish."
             ],
-            pMainImage: "ProductImages/Product17/product17_01.jpeg",
-            pImage1: "ProductImages/Product17/product17_02.jpeg",
-            pImage2: "ProductImages/Product17/product17_03.jpeg",
-            pImage3: "ProductImages/Product17/product17_04.jpeg",
-            pImage4: "ProductImages/Product17/product17_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product17/product17_01.jpeg",
+            pImage1: "../assets/ProductImages/Product17/product17_02.jpeg",
+            pImage2: "../assets/ProductImages/Product17/product17_03.jpeg",
+            pImage3: "../assets/ProductImages/Product17/product17_04.jpeg",
+            pImage4: "../assets/ProductImages/Product17/product17_05.jpeg",
             pDesc: "Modern tailoring with refined comfort and elegance."
         },
         {
@@ -659,11 +659,11 @@ const Data = {
                 "Dry clean only to preserve the silk finish.",
                 "Store on a padded hanger away from sunlight."
             ],
-            pMainImage: "ProductImages/Product18/product18_01.jpeg",
-            pImage1: "ProductImages/Product18/product18_02.jpeg",
-            pImage2: "ProductImages/Product18/product18_03.jpeg",
-            pImage3: "ProductImages/Product18/product18_04.jpeg",
-            pImage4: "ProductImages/Product18/product18_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product18/product18_01.jpeg",
+            pImage1: "../assets/ProductImages/Product18/product18_02.jpeg",
+            pImage2: "../assets/ProductImages/Product18/product18_03.jpeg",
+            pImage3: "../assets/ProductImages/Product18/product18_04.jpeg",
+            pImage4: "../assets/ProductImages/Product18/product18_05.jpeg",
             pDesc: "Flowing silk elegance designed for unforgettable evenings."
         },
         {
@@ -696,11 +696,11 @@ const Data = {
                 "Wipe clean with a soft, dry cloth.",
                 "Store with the dust bag when not in use."
             ],
-            pMainImage: "ProductImages/Product19/product19_01.jpeg",
-            pImage1: "ProductImages/Product19/product19_02.jpeg",
-            pImage2: "ProductImages/Product19/product19_03.jpeg",
-            pImage3: "ProductImages/Product19/product19_04.jpeg",
-            pImage4: "ProductImages/Product19/product19_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product19/product19_01.jpeg",
+            pImage1: "../assets/ProductImages/Product19/product19_02.jpeg",
+            pImage2: "../assets/ProductImages/Product19/product19_03.jpeg",
+            pImage3: "../assets/ProductImages/Product19/product19_04.jpeg",
+            pImage4: "../assets/ProductImages/Product19/product19_05.jpeg",
             pDesc: "Compact luxury crafted for effortless everyday style."
         },
         {
@@ -733,11 +733,11 @@ const Data = {
                 "Trim the wick to 1/4 inch before each burn.",
                 "Keep away from drafts and burn on a heat-safe surface."
             ],
-            pMainImage: "ProductImages/Product20/product20_01.jpeg",
-            pImage1: "ProductImages/Product20/product20_02.jpeg",
-            pImage2: "ProductImages/Product20/product20_03.jpeg",
-            pImage3: "ProductImages/Product20/product20_04.jpeg",
-            pImage4: "ProductImages/Product20/product20_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product20/product20_01.jpeg",
+            pImage1: "../assets/ProductImages/Product20/product20_02.jpeg",
+            pImage2: "../assets/ProductImages/Product20/product20_03.jpeg",
+            pImage3: "../assets/ProductImages/Product20/product20_04.jpeg",
+            pImage4: "../assets/ProductImages/Product20/product20_05.jpeg",
             pDesc: "Warm oud and vanilla fragrance for luxurious living."
         },
         {
@@ -770,11 +770,11 @@ const Data = {
                 "Dry clean only; store flat wrapped in muslin cloth.",
                 "Avoid contact with perfume and water to protect embroidery."
             ],
-            pMainImage: "ProductImages/Product21/product21_01.jpeg",
-            pImage1: "ProductImages/Product21/product21_02.jpeg",
-            pImage2: "ProductImages/Product21/product21_03.jpeg",
-            pImage3: "ProductImages/Product21/product21_04.jpeg",
-            pImage4: "ProductImages/Product21/product21_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product21/product21_01.jpeg",
+            pImage1: "../assets/ProductImages/Product21/product21_02.jpeg",
+            pImage2: "../assets/ProductImages/Product21/product21_03.jpeg",
+            pImage3: "../assets/ProductImages/Product21/product21_04.jpeg",
+            pImage4: "../assets/ProductImages/Product21/product21_05.jpeg",
             pDesc: "Handcrafted couture designed for timeless celebrations."
         },
         {
@@ -807,11 +807,11 @@ const Data = {
                 "Avoid magnetic fields near the watch movement.",
                 "Service the movement periodically for lasting accuracy."
             ],
-            pMainImage: "ProductImages/Product22/product22_01.jpeg",
-            pImage1: "ProductImages/Product22/product22_02.jpeg",
-            pImage2: "ProductImages/Product22/product22_03.jpeg",
-            pImage3: "ProductImages/Product22/product22_04.jpeg",
-            pImage4: "ProductImages/Product22/product22_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product22/product22_01.jpeg",
+            pImage1: "../assets/ProductImages/Product22/product22_02.jpeg",
+            pImage2: "../assets/ProductImages/Product22/product22_03.jpeg",
+            pImage3: "../assets/ProductImages/Product22/product22_04.jpeg",
+            pImage4: "../assets/ProductImages/Product22/product22_05.jpeg",
             pDesc: "Swiss-inspired precision wrapped in timeless elegance."
         },
         {
@@ -844,11 +844,11 @@ const Data = {
                 "Dry clean only to preserve the velvet pile.",
                 "Steam to remove creases; avoid direct ironing."
             ],
-            pMainImage: "ProductImages/Product23/product23_01.jpeg",
-            pImage1: "ProductImages/Product23/product23_02.jpeg",
-            pImage2: "ProductImages/Product23/product23_03.jpeg",
-            pImage3: "ProductImages/Product23/product23_04.jpeg",
-            pImage4: "ProductImages/Product23/product23_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product23/product23_01.jpeg",
+            pImage1: "../assets/ProductImages/Product23/product23_02.jpeg",
+            pImage2: "../assets/ProductImages/Product23/product23_03.jpeg",
+            pImage3: "../assets/ProductImages/Product23/product23_04.jpeg",
+            pImage4: "../assets/ProductImages/Product23/product23_05.jpeg",
             pDesc: "Luxury velvet couture crafted for unforgettable evenings."
         },
         {
@@ -881,11 +881,11 @@ const Data = {
                 "Dry clean recommended for best results.",
                 "Steam gently to remove creases before wear."
             ],
-            pMainImage: "ProductImages/Product24/product24_01.jpeg",
-            pImage1: "ProductImages/Product24/product24_02.jpeg",
-            pImage2: "ProductImages/Product24/product24_03.jpeg",
-            pImage3: "ProductImages/Product24/product24_04.jpeg",
-            pImage4: "ProductImages/Product24/product24_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product24/product24_01.jpeg",
+            pImage1: "../assets/ProductImages/Product24/product24_02.jpeg",
+            pImage2: "../assets/ProductImages/Product24/product24_03.jpeg",
+            pImage3: "../assets/ProductImages/Product24/product24_04.jpeg",
+            pImage4: "../assets/ProductImages/Product24/product24_05.jpeg",
             pDesc: "Minimal tailoring with timeless contemporary sophistication."
         },
         {
@@ -918,11 +918,11 @@ const Data = {
                 "Dry clean only; do not iron directly on sequins.",
                 "Store flat or on a padded hanger to prevent snagging."
             ],
-            pMainImage: "ProductImages/Product25/product25_01.jpeg",
-            pImage1: "ProductImages/Product25/product25_02.jpeg",
-            pImage2: "ProductImages/Product25/product25_03.jpeg",
-            pImage3: "ProductImages/Product25/product25_04.jpeg",
-            pImage4: "ProductImages/Product25/product25_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product25/product25_01.jpeg",
+            pImage1: "../assets/ProductImages/Product25/product25_02.jpeg",
+            pImage2: "../assets/ProductImages/Product25/product25_03.jpeg",
+            pImage3: "../assets/ProductImages/Product25/product25_04.jpeg",
+            pImage4: "../assets/ProductImages/Product25/product25_05.jpeg",
             pDesc: "Sparkling glamour designed for luxury night events."
         },
         {
@@ -955,11 +955,11 @@ const Data = {
                 "Dry clean only to preserve embroidery detailing.",
                 "Store folded in a cotton cloth away from sunlight."
             ],
-            pMainImage: "ProductImages/Product26/product26_01.jpeg",
-            pImage1: "ProductImages/Product26/product26_02.jpeg",
-            pImage2: "ProductImages/Product26/product26_03.jpeg",
-            pImage3: "ProductImages/Product26/product26_04.jpeg",
-            pImage4: "ProductImages/Product26/product26_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product26/product26_01.jpeg",
+            pImage1: "../assets/ProductImages/Product26/product26_02.jpeg",
+            pImage2: "../assets/ProductImages/Product26/product26_03.jpeg",
+            pImage3: "../assets/ProductImages/Product26/product26_04.jpeg",
+            pImage4: "../assets/ProductImages/Product26/product26_05.jpeg",
             pDesc: "Intricate embroidery inspired by timeless royal elegance."
         },
         {
@@ -992,11 +992,11 @@ const Data = {
                 "Dry clean only for best fabric care.",
                 "Store flat wrapped in muslin cloth."
             ],
-            pMainImage: "ProductImages/Product27/product27_01.jpeg",
-            pImage1: "ProductImages/Product27/product27_02.jpeg",
-            pImage2: "ProductImages/Product27/product27_03.jpeg",
-            pImage3: "ProductImages/Product27/product27_04.jpeg",
-            pImage4: "ProductImages/Product27/product27_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product27/product27_01.jpeg",
+            pImage1: "../assets/ProductImages/Product27/product27_02.jpeg",
+            pImage2: "../assets/ProductImages/Product27/product27_03.jpeg",
+            pImage3: "../assets/ProductImages/Product27/product27_04.jpeg",
+            pImage4: "../assets/ProductImages/Product27/product27_05.jpeg",
             pDesc: "Graceful festive silhouette with handcrafted embroidery."
         },
         {
@@ -1029,11 +1029,11 @@ const Data = {
                 "Dry clean only to preserve the organza texture.",
                 "Store flat wrapped in muslin cloth away from sunlight."
             ],
-            pMainImage: "ProductImages/Product28/product28_01.jpeg",
-            pImage1: "ProductImages/Product28/product28_02.jpeg",
-            pImage2: "ProductImages/Product28/product28_03.jpeg",
-            pImage3: "ProductImages/Product28/product28_04.jpeg",
-            pImage4: "ProductImages/Product28/product28_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product28/product28_01.jpeg",
+            pImage1: "../assets/ProductImages/Product28/product28_02.jpeg",
+            pImage2: "../assets/ProductImages/Product28/product28_03.jpeg",
+            pImage3: "../assets/ProductImages/Product28/product28_04.jpeg",
+            pImage4: "../assets/ProductImages/Product28/product28_05.jpeg",
             pDesc: "Hand-embroidered elegance with luxurious organza drape."
         },
         {
@@ -1066,11 +1066,11 @@ const Data = {
                 "Dry clean only to protect embroidery and zari work.",
                 "Store folded in cotton cloth away from direct light."
             ],
-            pMainImage: "ProductImages/Product29/product29_01.jpeg",
-            pImage1: "ProductImages/Product29/product29_02.jpeg",
-            pImage2: "ProductImages/Product29/product29_03.jpeg",
-            pImage3: "ProductImages/Product29/product29_04.jpeg",
-            pImage4: "ProductImages/Product29/product29_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product29/product29_01.jpeg",
+            pImage1: "../assets/ProductImages/Product29/product29_02.jpeg",
+            pImage2: "../assets/ProductImages/Product29/product29_03.jpeg",
+            pImage3: "../assets/ProductImages/Product29/product29_04.jpeg",
+            pImage4: "../assets/ProductImages/Product29/product29_05.jpeg",
             pDesc: "Flowing royal elegance with premium handcrafted detailing."
         },
         {
@@ -1103,11 +1103,11 @@ const Data = {
                 "Dry clean only for best results.",
                 "Store flat wrapped in a cotton cloth."
             ],
-            pMainImage: "ProductImages/Product30/product30_01.jpeg",
-            pImage1: "ProductImages/Product30/product30_02.jpeg",
-            pImage2: "ProductImages/Product30/product30_03.jpeg",
-            pImage3: "ProductImages/Product30/product30_04.jpeg",
-            pImage4: "ProductImages/Product30/product30_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product30/product30_01.jpeg",
+            pImage1: "../assets/ProductImages/Product30/product30_02.jpeg",
+            pImage2: "../assets/ProductImages/Product30/product30_03.jpeg",
+            pImage3: "../assets/ProductImages/Product30/product30_04.jpeg",
+            pImage4: "../assets/ProductImages/Product30/product30_05.jpeg",
             pDesc: "Elegant festive attire finished with delicate embroidery."
         },
         {
@@ -1140,11 +1140,11 @@ const Data = {
                 "Dry clean only to preserve embroidery detailing.",
                 "Store flat wrapped in muslin cloth away from sunlight."
             ],
-            pMainImage: "ProductImages/Product31/product31_01.jpeg",
-            pImage1: "ProductImages/Product31/product31_02.jpeg",
-            pImage2: "ProductImages/Product31/product31_03.jpeg",
-            pImage3: "ProductImages/Product31/product31_04.jpeg",
-            pImage4: "ProductImages/Product31/product31_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product31/product31_01.jpeg",
+            pImage1: "../assets/ProductImages/Product31/product31_02.jpeg",
+            pImage2: "../assets/ProductImages/Product31/product31_03.jpeg",
+            pImage3: "../assets/ProductImages/Product31/product31_04.jpeg",
+            pImage4: "../assets/ProductImages/Product31/product31_05.jpeg",
             pDesc: "Statement festive couture with luxurious handcrafted finish."
         },
         {
@@ -1177,11 +1177,11 @@ const Data = {
                 "Dry clean only to preserve the silk's sheen and zari work.",
                 "Store folded in a muslin cloth away from direct sunlight."
             ],
-            pMainImage: "ProductImages/Product32/product32_01.jpeg",
-            pImage1: "ProductImages/Product32/product32_02.jpeg",
-            pImage2: "ProductImages/Product32/product32_03.jpeg",
-            pImage3: "ProductImages/Product32/product32_04.jpeg",
-            pImage4: "ProductImages/Product32/product32_05.jpeg",
+            pMainImage: "../assets/ProductImages/Product32/product32_01.jpeg",
+            pImage1: "../assets/ProductImages/Product32/product32_02.jpeg",
+            pImage2: "../assets/ProductImages/Product32/product32_03.jpeg",
+            pImage3: "../assets/ProductImages/Product32/product32_04.jpeg",
+            pImage4: "../assets/ProductImages/Product32/product32_05.jpeg",
             pDesc: "Handwoven Banarasi silk adorned with timeless antique gold zari craftsmanship."
         }
     ]
