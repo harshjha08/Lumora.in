@@ -460,11 +460,32 @@ body::-webkit-scrollbar{
 
 /*Women-focused section*/
 .women-focused-section{
+    position: relative;
     margin: 24px 32px 40px;
     padding: 40px 40px;
     border-radius: 28px;
     background: linear-gradient(120deg, rgba(30, 36, 33, 0.96) 0%, rgba(44, 53, 49, 0.95) 100%);
     box-shadow: 0 20px 50px rgba(28, 36, 33, 0.12);
+    overflow: hidden;
+}
+
+.women-focused-section::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 0%, rgba(212, 180, 131, 0.18) 30%, transparent 55%, rgba(255, 255, 255, 0.06) 70%, transparent 100%);
+    transform: translateX(-120%);
+    animation: goldShimmer 5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes goldShimmer {
+    0% {
+        transform: translateX(-120%);
+    }
+    100% {
+        transform: translateX(120%);
+    }
 }
 
 .women-focused-content{
