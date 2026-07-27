@@ -19,48 +19,98 @@
         width: 30px;
         color: #B08D57;
     }
-
     .nav-side-panel{
         position: absolute;
-        display: block;
+        display: flex;
+        flex-direction: column;
         top: 85px;
         padding: 0px;
         left: 0;
         height: 80vh;
         width: 0%;
         z-index: 9999;
-        background: #F1ECE4;
+        background: linear-gradient(180deg, #f8f3ea 0%, #f1e9dd 100%);
         overflow: hidden;
-        border-bottom-right-radius: 10px;
+        border-bottom-right-radius: 16px;
+        box-shadow: 0 15px 35px rgba(28, 36, 33, 0.12);
         transition: all 0.3s ease-in-out;
     }
     .nav-side-panel.active{
         position: absolute;
         top: 85px;
-        padding: 10px;
+        padding: 16px 14px 18px;
         left: 0;
         height: 78vh;
-        width: 50%;
+        width: 78%;
         z-index: 9999;
-        background: #F1ECE4;
-        box-shadow: 0 15px 35px rgba(176,141,87,0.35) ;
-        border-bottom-right-radius: 10px;
+        background: linear-gradient(180deg, #f8f3ea 0%, #f1e9dd 100%);
+        box-shadow: 0 18px 40px rgba(176,141,87,0.28);
+        border-bottom-right-radius: 18px;
+    }
+    .nav-side-panel-header{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 6px 4px 14px;
+        border-bottom: 1px solid rgba(176, 141, 87, 0.2);
+        margin-bottom: 12px;
+    }
+    .nav-side-panel-header .logo-box{
+        width: auto;
+        font-size: 20px;
+        color: #B08D57;
+    }
+    .nav-side-panel-header p{
+        font-size: 12px;
+        color: #7a6750;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
     }
     .nav-side-panel-list{
-        font-size: large;
-        color: #B08D57;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 15px;
+        color: #2f2a24;
         padding: 0px;
         margin: 0px;
     }
-    .nav-side-panel ul li{
+    .nav-side-panel-list li{
         list-style: none;
-        padding: 10px;
-        border-bottom: 1px solid #b08c57e1;
+        padding: 11px 12px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid transparent;
+        transition: all 0.2s ease;
     }
-    .nav-side-panel ul li:hover{
-        background: #b08c579e;
-        color: #ffffff;
+    .nav-side-panel-list li:hover{
+        background: rgba(176, 141, 87, 0.14);
+        color: #4b3a22;
+        border-color: rgba(176, 141, 87, 0.16);
         cursor: pointer;
+    }
+    .nav-side-panel-list li span{
+        font-size: 13px;
+        color: #8b7450;
+    }
+    .nav-side-panel-footer{
+        margin-top: auto;
+        padding-top: 12px;
+        border-top: 1px solid rgba(176, 141, 87, 0.2);
+    }
+    .nav-side-panel-footer .auth-btn{
+        width: 100%;
+        min-height: 46px;
+        padding: 12px 16px;
+        justify-content: center;
+        border-radius: 999px;
+        background: #1E2421;
+        color: #fff;
+        margin-top: 8px;
+        font-weight: 600;
+        box-shadow: 0 8px 18px rgba(30, 36, 33, 0.16);
     }
     .user-profile{
         display: none;
@@ -91,9 +141,75 @@
     }
    
     .banner-container{
-       
         height: 150px;
     }
+
+    .premium-highlights{
+        margin: 16px 12px 24px;
+        padding: 20px 16px;
+        border-radius: 22px;
+    }
+
+    .highlights-header{
+        margin-bottom: 18px;
+        padding-right: 0;
+    }
+
+    .highlights-header h2{
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .highlights-header p{
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .highlights-grid{
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .highlight-card{
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .highlight-icon{
+        width: 40px;
+        height: 40px;
+        margin-bottom: 12px;
+    }
+
+    .women-focused-section{
+        margin: 16px 12px 20px;
+        padding: 20px 16px;
+        border-radius: 20px;
+    }
+
+    .women-focused-content h2{
+        font-size: 22px;
+    }
+
+    .women-focused-content p{
+        font-size: 14px;
+    }
+
+    .women-focused-tags span{
+        font-size: 12px;
+    }
+
+    .trust-strip{
+        margin: 0 12px 22px;
+        padding: 16px;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .trust-item{
+        padding: 4px 0;
+    }
+
     #main-body-guest{
         padding: 15px;
     }
