@@ -62,13 +62,49 @@ function updatedot(index) {
 
 // --- catogory Buttons
 const catbtn = document.querySelectorAll(".catogory-btns");
+let currentCategory = "all";
+let currentQuery = "";
+
+function matchesCategoryFilter(product, filter) {
+    switch (filter) {
+        case "deals":
+            return Number(product.pDiscount) > 0 || product.pBadge === "Hot Deal";
+        case "accessories":
+            return ["Accessories", "Bags", "Jewellery", "Watches"].includes(product.pCategory);
+        case "beauty":
+            return product.pCategory === "Fragrance" || /beauty|fragrance/i.test([product.pName, product.pTag, product.pDesc].join(" "));
+        case "trending":
+            return product.pRiview >= 150 || Number(product.pDiscount) > 0 || product.pBadge === "Hot Deal";
+        case "sports":
+            return /sport|fitness|athle|active/i.test([product.pName, product.pCategory, product.pTag, product.pDesc].join(" "));
+        default:
+            return true;
+    }
+}
+
+function getVisibleProducts() {
+    let products = Data.HeroProducts.filter(product => matchesCategoryFilter(product, currentCategory));
+
+    if (currentQuery.trim()) {
+        const q = currentQuery.trim().toLowerCase();
+        products = products.filter(product => getSearchableText(product).includes(q));
+    }
+
+    return shuffleArray(products).slice(0, DISPLAY_COUNT);
+}
+
+function renderProductGrid() {
+    renderProducts(getVisibleProducts());
+}
+
 catbtn.forEach(btn => {
     btn.addEventListener("click", () => {
         catbtn.forEach(button => {
             button.classList.remove("active");
         });
-        let id = btn.getAttribute("id");
         btn.classList.add("active");
+        currentCategory = btn.getAttribute("data-filter") || "all";
+        renderProductGrid();
     });
 });
 
@@ -153,6 +189,17 @@ const productContainer = document.querySelector(".products-display");
 function renderProducts(productList) {
     let counter = 1;
     let html = "";
+
+    if (!productList.length) {
+        productContainer.innerHTML = `
+            <div class="no-products">
+                <h3>No products found</h3>
+                <p>Try another category or search term to explore more.</p>
+            </div>
+        `;
+        return;
+    }
+
     // reversed so it visually matches the original "prepend" order
     [...productList].reverse().forEach(product => {
         html += buildProductCard(product, counter);
@@ -162,9 +209,8 @@ function renderProducts(productList) {
     lucide.createIcons();
 }
 
-// ---- Initial load: shuffle ALL products, show only first 30 ----
-let displayedProducts = shuffleArray(Data.HeroProducts).slice(0, DISPLAY_COUNT);
-renderProducts(displayedProducts);
+// ---- Initial load: show a curated first set of products ----
+renderProductGrid();
 
 // ================= EVENT DELEGATION (works for any rendered card, old or new) ================= //
 productContainer.addEventListener("click", (e) => {
@@ -359,12 +405,8 @@ function searchProducts(query) {
 
 // Renders matched/default products into the grid (searches full 100, not just the displayed 30)
 function filterDisplayedProducts(query) {
-    if (!query.trim()) {
-        renderProducts(displayedProducts); // wapas original shuffled 30
-        return;
-    }
-    let results = searchProducts(query); // full Data.HeroProducts search
-    renderProducts(results);
+    currentQuery = query || "";
+    renderProductGrid();
 }
 
 // ---- NEW: scroll page to the products section ----

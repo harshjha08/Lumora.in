@@ -35,6 +35,15 @@
     <meta name="application-name"
         content="Lumora">
 
+    <meta name="format-detection"
+        content="telephone=no, email=no, address=no">
+
+    <meta name="referrer"
+        content="strict-origin-when-cross-origin">
+
+    <meta name="color-scheme"
+        content="light only">
+
     <!-- ==========================================
         CANONICAL
     =========================================== -->
@@ -47,15 +56,15 @@
     =========================================== -->
 
     <link rel="icon"
-        type="image/png"
+        type="image/jpeg"
         sizes="32x32"
-        href="https://picsum.photos/seed/lumora-favicon/32/32">
+        href="FavIconIMG.jpeg">
 
     <link rel="shortcut icon"
-        href="https://picsum.photos/seed/lumora-favicon/32/32">
+        href="FavIconIMG.jpeg">
 
     <link rel="apple-touch-icon"
-        href="https://picsum.photos/seed/lumora-apple/180/180">
+        href="FavIconIMG.jpeg">
 
     <!-- ==========================================
         OPEN GRAPH
@@ -220,17 +229,23 @@
     </section>
     
     <section id="main-body-guest">
+        <div class="collection-intro">
+            <p class="highlights-eyebrow">Curated for every moment</p>
+            <h3>Discover standout pieces by style, mood, and occasion.</h3>
+            <p>Browse premium fashion, exclusive deals, and elegant essentials in one refined collection.</p>
+        </div>
+
         <div class="catogory-box">
             <div class="catogories-btn">
-                <button class="catogory-btns active" id="all-cat">All Catogories</button>
-                <button class="catogory-btns" id="Exclusive-deals">Exclusive Deals</button>
-                <button class="catogory-btns" id="accessories">Accessories</button>
-                <button class="catogory-btns" id="beauty">Beauty</button>
-                <button class="catogory-btns" id="trending">Trending Now</button>
-                <button class="catogory-btns" id="sports">Sports</button>
+                <button class="catogory-btns active" type="button" data-filter="all">All Categories</button>
+                <button class="catogory-btns" type="button" data-filter="deals">Exclusive Deals</button>
+                <button class="catogory-btns" type="button" data-filter="accessories">Accessories</button>
+                <button class="catogory-btns" type="button" data-filter="beauty">Beauty</button>
+                <button class="catogory-btns" type="button" data-filter="trending">Trending Now</button>
+                <button class="catogory-btns" type="button" data-filter="sports">Sports</button>
             </div>
             <div class="explore-more">
-                <button>Explore More  <i data-lucide="arrow-right"></i></button>
+                <button type="button">Explore More  <i data-lucide="arrow-right"></i></button>
             </div>
         </div>
         
