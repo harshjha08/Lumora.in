@@ -597,6 +597,7 @@ body::-webkit-scrollbar{
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 28px;
 }
 #loadBtn{
     width: 80%;

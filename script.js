@@ -409,6 +409,14 @@ function filterDisplayedProducts(query) {
     renderProductGrid();
 }
 
+function resetCategoryToAll() {
+    currentCategory = "all";
+    catbtn.forEach(button => {
+        button.classList.toggle("active", button.getAttribute("data-filter") === "all");
+    });
+    renderProductGrid();
+}
+
 // ---- NEW: scroll page to the products section ----
 function scrollToProducts() {
     // productContainer is already defined above as document.querySelector(".products-display")
@@ -505,11 +513,13 @@ document.querySelectorAll('.search-box').forEach(box => {
 
     input.addEventListener('focus', () => {
         box.classList.add('active');
+        resetCategoryToAll();
         renderDropdown(dropdown, input.value);
         scrollToProducts(); // ---- NEW: jaise hi search box par focus/click ho, products section tak scroll ----
     });
 
     input.addEventListener('input', () => {
+        resetCategoryToAll();
         renderDropdown(dropdown, input.value);
         filterDisplayedProducts(input.value);
     });
