@@ -54,7 +54,19 @@ body::-webkit-scrollbar{
     --radius-xl: 32px;
     /* ========= Transition ========= */
     --transition: 0.35s ease;
+    --black:#1a1a1a;
 }
+
+  /* ---------- Toast ---------- */
+  .toast{
+    position:fixed; left:50%; bottom:32px; transform:translateX(-50%) translateY(20px);
+    background:var(--black); color:#fff; padding:13px 22px; border-radius:6px;
+    font-size:13.5px; opacity:0; pointer-events:none; transition:opacity .25s, transform .25s;
+    z-index: 999999; display:flex; align-items:center; gap:10px; white-space:nowrap;
+  }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .toast .icon{ color:var(--gold-soft); width:16px; height:16px; }
+
 /*NavBar*/
 .nav{
     width: 100%;

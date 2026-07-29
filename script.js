@@ -222,7 +222,7 @@ productContainer.addEventListener("click", (e) => {
             openAuthModal();
         } else {
             wishBtn.classList.toggle("active");
-            showPopup("added to wishlist");
+            showToast("added to wishlist")
         }
         return;
     }
@@ -233,7 +233,7 @@ productContainer.addEventListener("click", (e) => {
         if (!loggedIn) {
             openAuthModal();
         } else {
-            showPopup("added to Cart");
+            showToast("added to Cart")
         }
         return;
     }
@@ -320,10 +320,10 @@ authSubmit.addEventListener("click", () => {
         userNameInput.value = "";
         authPwInput.value = "";
         closeModal();
-        showPopup("Login Sucessfully");
+        showToast("Login Successfully");
         loggedIn = "true";
     } else {
-        showInvalidMsg("Invalid User Or Password");
+        showToast("Invalid User Or Password")
     }
 });
 let alertMsgBox = document.querySelector(".alert-msg");
@@ -561,3 +561,16 @@ loadBtn.addEventListener("click", () => {
     let currentCount = productContainer.querySelectorAll(".product-box").length;
     let nextProducts = shuffleArray(Data.HeroProducts).slice(currentCount, currentCount + DISPLAY_COUNT);   
 });
+
+
+
+
+/* ---------------- Toast ---------------- */
+const toast = document.getElementById('toast');
+let toastTimer;
+function showToast(msg){
+  toast.innerHTML = '<span>' + msg + '</span>';
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+}
