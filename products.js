@@ -1,4 +1,6 @@
-
+let loggedIn = false;
+const SavedUserName = "harshjha08";
+const SavedUserPassword = "user123";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -225,6 +227,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const heartBtn = card.querySelector('.wishlist-heart');
       let active = false;
       heartBtn.addEventListener('click', (e) => {
+        if(!loggedIn){
+          showToast('Sign In To Your Account','lock');
+          return;
+        }
         e.stopPropagation();
         active = !active;
         heartBtn.classList.toggle('active', active);
@@ -299,11 +305,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------------- Add to cart / Buy now ---------------- */
   document.getElementById('addCartBtn').addEventListener('click', () => {
+    if(!loggedIn){
+      showToast('Sign In To Your Account','lock');
+      return;
+    }
     cartCount += qty;
     updateCounters();
     showToast(qty + ' item' + (qty > 1 ? 's' : '') + ' added to cart', 'bag');
   });
   document.getElementById('buyNowBtn').addEventListener('click', () => {
+    if(!loggedIn){
+      showToast('Sign In To Your Account','lock');
+      return;
+    }
     showToast('Redirecting to secure checkout…', 'lock');
   });
 
@@ -312,6 +326,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const wishlistToggleLabel = document.getElementById('wishlistToggleLabel');
   let wishlisted = false;
   wishlistToggleBtn.addEventListener('click', () => {
+    if(!loggedIn){
+      showToast('Sign In To Your Account','lock');
+      return;
+    }
     wishlisted = !wishlisted;
     wishlistToggleBtn.classList.toggle('active', wishlisted);
     wishlistToggleLabel.textContent = wishlisted ? 'Added to Wishlist' : 'Add to Wishlist';

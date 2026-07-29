@@ -235,7 +235,7 @@ function renderProducts(productList) {
         counter++;
     });
     productContainer.innerHTML = html;
-    lucide.createIcons();
+    //lucide.createIcons();
 }
 
 // ---- Initial load: show a curated first set of products ----
@@ -483,7 +483,7 @@ function renderDropdown(dropdown, query) {
         });
 
         dropdown.classList.add('active');
-        lucide.createIcons();
+        //lucide.createIcons();
         return;
     }
 
