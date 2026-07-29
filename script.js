@@ -3,9 +3,7 @@ const SavedUserName = "harshjha08";
 const SavedUserPassword = "user123";
 
 window.addEventListener("load", () => {
-
     const preloader = document.querySelector(".preloader");
-
     setTimeout(() => {
 
         preloader.classList.add("hide");
@@ -13,6 +11,41 @@ window.addEventListener("load", () => {
     }, 2000);
 
 });
+/* ---------------- Icon library ---------------- */
+  const ICONS = {
+    search: '<circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>',
+    user: '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+    heart: '<path d="M20.8 4.9a5.4 5.4 0 0 0-7.6 0L12 6l-1.2-1.1a5.4 5.4 0 1 0-7.6 7.6l1.2 1.1L12 21l7.6-7.4 1.2-1.1a5.4 5.4 0 0 0 0-7.6z"/>',
+    bag: '<path d="M6.5 7h11l1 13h-13z"/><path d="M9 7a3 3 0 0 1 6 0"/>',
+    tag: '<path d="M20 12.5 12.5 20 3 10.5V4h6.5z"/><circle cx="7.5" cy="7.5" r="1.3"/>',
+    minus: '<line x1="5" y1="12" x2="19" y2="12"/>',
+    plus: '<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>',
+    share: '<circle cx="18" cy="5.5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="18.5" r="2.6"/><line x1="8.4" y1="10.7" x2="15.6" y2="7"/><line x1="8.4" y1="13.3" x2="15.6" y2="17"/>',
+    chevronLeft: '<polyline points="15 18 9 12 15 6"/>',
+    chevronRight: '<polyline points="9 18 15 12 9 6"/>',
+    truck: '<rect x="1.5" y="7" width="13" height="9.5" rx="1"/><path d="M14.5 10h4l3.5 3.2v3.3h-7.5z"/><circle cx="6" cy="18.5" r="1.6"/><circle cx="17.5" cy="18.5" r="1.6"/>',
+    wallet: '<rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10.5h20"/><circle cx="17" cy="14.5" r="1.1"/>',
+    refresh: '<path d="M21 12a9 9 0 1 1-3.1-6.8"/><polyline points="21 3 21 9 15 9"/>',
+    shield: '<path d="M12 3.2 20 6.4v5.6c0 5.1-3.4 8-8 9-4.6-1-8-3.9-8-9V6.4z"/>',
+    lock: '<rect x="4.5" y="10.5" width="15" height="9.5" rx="2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/>',
+    award: '<circle cx="12" cy="8.3" r="5"/><path d="M8.6 12.7 7 21l5-2.6L17 21l-1.6-8.3"/>',
+    headset: '<path d="M4 13.5a8 8 0 0 1 16 0"/><rect x="2" y="13.5" width="4" height="6" rx="1.5"/><rect x="18" y="13.5" width="4" height="6" rx="1.5"/>',
+    spool: '<circle cx="12" cy="12" r="3.2"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/>',
+    gem: '<path d="M4.5 9 8 4h8l3.5 5-7.5 11z"/><path d="M4.5 9h15M8 4l-3.5 5 7.5 11 7.5-11L16 4"/>',
+    wave: '<path d="M2.5 9c2-3 4-3 6 0s4 3 6 0 4-3 6.5 0"/><path d="M2.5 16c2-3 4-3 6 0s4 3 6 0 4-3 6.5 0"/>',
+    hanger: '<path d="M12 3.2a1.9 1.9 0 1 1 1.9 1.9c-.7.4-1.9 1.1-1.9 2.3"/><path d="M12 7.4 2.5 13.5h19z"/><line x1="2.5" y1="17" x2="21.5" y2="17"/>',
+    hand: '<path d="M8.2 12.2V5.6a1.4 1.4 0 0 1 2.8 0v5.8"/><path d="M11 11.4V4.4a1.4 1.4 0 0 1 2.8 0v6.7"/><path d="M13.8 11V6.2a1.4 1.4 0 0 1 2.8 0v8.4c0 3.3-1.9 5.6-5.6 5.6h-.9c-2.8 0-4.2-.9-5.6-2.8l-2.3-3.7A1.4 1.4 0 0 1 4.6 12.1L6.6 14.6"/>',
+    leaf: '<path d="M5 21c8.5 0 13-4.7 13-13V5h-1.9C8.3 5 3.6 9.7 3.6 18.1V21z"/><path d="M5 21c4.6-4.6 7.4-8.3 11-13"/>',
+    globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 4.2 3 13.8 0 18M12 3c-3 4.2-3 13.8 0 18"/>',
+    gift: '<rect x="3.5" y="9" width="17" height="12" rx="1"/><path d="M3.5 13h17"/><path d="M12 9v12"/><path d="M12 9c-1.6 0-3.2-1-3.2-2.6S10.4 4 12 5c1.6-1 3.7-.5 3.7 1.4S13.6 9 12 9z"/>',
+    menu: '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>',
+    starFill: '<polygon points="12 2.5 15 9 22 9.7 16.8 14.6 18.2 21.5 12 18 5.8 21.5 7.2 14.6 2 9.7 9 9"/>'
+  };
+
+  function iconMarkup(name, extraClass){
+    const body = ICONS[name] || '';
+    return '<svg class="icon' + (extraClass ? ' ' + extraClass : '') + '" viewBox="0 0 24 24">' + body + '</svg>';
+  }
 
 // ---- Banner and Promo side bar Images Sliding
 let Bannerimage = document.querySelector(".banner-container");
@@ -222,7 +255,8 @@ productContainer.addEventListener("click", (e) => {
             openAuthModal();
         } else {
             wishBtn.classList.toggle("active");
-            showToast("added to wishlist")
+            // showToast("added to wishlist")
+            showToast('added to Wishlist', 'bag');
         }
         return;
     }
@@ -233,7 +267,7 @@ productContainer.addEventListener("click", (e) => {
         if (!loggedIn) {
             openAuthModal();
         } else {
-            showToast("added to Cart")
+            showToast('added to Cart', 'bag');
         }
         return;
     }
@@ -563,14 +597,12 @@ loadBtn.addEventListener("click", () => {
 });
 
 
-
-
 /* ---------------- Toast ---------------- */
-const toast = document.getElementById('toast');
-let toastTimer;
-function showToast(msg){
-  toast.innerHTML = '<span>' + msg + '</span>';
-  toast.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
-}
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  function showToast(msg, icon){
+    toast.innerHTML = (icon ? iconMarkup(icon) : '') + '<span>' + msg + '</span>';
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+  }

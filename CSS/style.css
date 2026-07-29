@@ -55,6 +55,7 @@ body::-webkit-scrollbar{
     /* ========= Transition ========= */
     --transition: 0.35s ease;
     --black:#1a1a1a;
+    --gold-soft:#e7c98a;
 }
 
   /* ---------- Toast ---------- */
