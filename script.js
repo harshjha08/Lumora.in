@@ -184,19 +184,15 @@ function buildProductCard(product, counter) {
                         <img class="supporting-image-div" id="SPImage.${counter}.4" src="${product.pImage4}">
                     </div>
                 </div>
-
                 <div class="wishlist-btn" id="${product.pId}">
                     <i data-lucide="heart"></i>
                 </div>
-
                 <img class="product-image" id="product${counter}" src="${product.pMainImage}">
             </div>
-
             <div class="product-detail-box">
                 <span class="product-tag">${product.pTag}</span>
                 <h3 class="product-title">${product.pName}</h3>
                 <p class="product-desc">${product.pDesc}</p>
-
                 <div class="product-rating-price">
                     
                     <div class="rating">
