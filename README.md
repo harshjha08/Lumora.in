@@ -1,4 +1,4 @@
-# 🛍️ Lumora - Premium Fashion & Luxury E-Commerce Website
+# 🛍️ Lumora - Premium Fashion E-Commerce Frontend
 
 <p align="center">
   <img src="https://img.shields.io/badge/HTML-5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
@@ -9,80 +9,71 @@
 </p>
 
 <p align="center">
-A modern, responsive and premium luxury e-commerce website built using HTML, CSS and JavaScript.
+A modern, premium-looking fashion e-commerce frontend built with HTML, CSS, and JavaScript.
 </p>
 
 ---
 
 ## 🌐 Live Demo
 
-**Vercel**
-
-https://lumorain.vercel.app/
-
-**GitHub Pages**
-
-https://harshjha08.github.io/Lumora.in/
+- Vercel: https://lumorain.vercel.app/
+- GitHub Pages: https://harshjha08.github.io/Lumora.in/
 
 ---
 
-# 📖 About
+## 📖 About
 
-Lumora is a premium luxury fashion e-commerce frontend designed with a modern UI/UX. The project focuses on elegant design, responsive layouts, smooth interactions, and a high-quality shopping experience.
+Lumora is a responsive fashion and luxury-style e-commerce frontend designed to showcase a polished shopping experience with elegant UI, product browsing, cart and wishlist interactions, and a modern mobile-friendly layout.
 
-The website demonstrates how a real-world luxury online store can be designed using only HTML, CSS, and JavaScript.
-
----
-
-# ✨ Features
-
-- 🎨 Premium Luxury UI
-- 📱 Fully Responsive Design
-- 🔍 Product Search
-- 🛒 Shopping Cart UI
-- ❤️ Wishlist
-- 👤 Authentication Modal
-- 📦 Product Details Page
-- 🎯 Category Filtering
-- 🚀 Fast Loading
-- 💎 Elegant Animations
-- 📲 Mobile Navigation
-- 🌙 Modern Layout
-- ⚡ Clean JavaScript Architecture
+This project focuses on presenting a premium online store experience using simple web technologies without relying on any heavy framework.
 
 ---
 
-# 🛠️ Technologies Used
+## ✨ Features
+
+- 🎨 Premium luxury-inspired UI
+- 📱 Fully responsive layout for desktop, tablet, and mobile
+- 🔍 Product search and browsing experience
+- 🛒 Interactive cart section
+- ❤️ Wishlist functionality
+- 👤 Login/authentication modal
+- 📦 Product detail page
+- 🚀 Smooth animations and transitions
+- 📲 Mobile navigation support
+- 🧠 Clean JavaScript-based interactions
+- 🌐 SEO-friendly structure with robots and sitemap files
+
+---
+
+## 🛠️ Technologies Used
 
 - HTML5
 - CSS3
 - JavaScript (ES6)
-- Lucide Icons
-- Responsive Design
+- Responsive Web Design
 - Vercel
 - GitHub Pages
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```text
 Lumora.in/
-│
+├── Banners/
 ├── CSS/
-│   ├── style.css
+│   ├── cart.css
 │   ├── mobile.css
-│   └── productView.css
-│
-├── Scripts/
-│   ├── script.js
-│   ├── products.js
-│   └── data.js
-│
-├── Assets/
-│
+│   ├── productView.css
+│   └── style.css
+├── ProductImages/
+├── sidePromoImg/
+├── cart.html
+├── data.js
 ├── index.html
 ├── productView.html
+├── products.js
+├── script.js
 ├── robots.txt
 ├── sitemap.xml
 └── README.md
@@ -90,84 +81,56 @@ Lumora.in/
 
 ---
 
-# 🚀 Getting Started
+## 🚀 Getting Started
 
-Clone the repository
+Clone the repository:
 
 ```bash
 git clone https://github.com/harshjha08/Lumora.in.git
 ```
 
-Go to the project folder
+Open the project folder:
 
 ```bash
 cd Lumora.in
 ```
 
-Open
+Then open the desired page in your browser:
 
 ```text
 index.html
 ```
 
-in your browser.
-
 No installation is required.
 
 ---
 
-# 📱 Responsive
+## 📱 Responsive Design
 
-The website is optimized for
+The website is optimized for:
 
 - Desktop
 - Laptop
 - Tablet
-- Mobile Devices
+- Mobile devices
 
 ---
 
-# 📸 Screenshots
+## 🧾 Design & Ownership Note
 
-Coming Soon
+This project is a custom front-end design created by me. The name "Lumora" is being used for this project as a personal project name, and this design is created independently for portfolio and learning purposes.
 
----
+I do not claim ownership of any other brand, business, or name that may already exist under a similar name online. If a rightful owner of a similar brand name has any concerns, I am open to addressing them respectfully.
 
-# 🎯 Future Improvements
-
-- User Authentication
-- Backend Integration
-- Payment Gateway
-- Order Tracking
-- Product Reviews
-- Admin Dashboard
-- Database Integration
-- AI Product Recommendations
-- Wishlist Synchronization
-- Dark Mode
-- Progressive Web App (PWA)
+This project is not intended to copy or infringe on any existing design, brand, or creator work without consent.
 
 ---
 
-# 🌍 SEO
-
-The project includes
-
-- Semantic HTML
-- Meta Tags
-- Open Graph Tags
-- Twitter Cards
-- robots.txt
-- sitemap.xml
-- Responsive Design
-
----
-
-# 🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome.
 
-If you'd like to improve the project:
+If you want to improve the project:
 
 1. Fork the repository
 2. Create a feature branch
@@ -177,27 +140,21 @@ If you'd like to improve the project:
 
 ---
 
-# 👨‍💻 Developer
+## 👨‍💻 Developer
 
 **Harsh Jha**
 
-GitHub
-
-https://github.com/harshjha08
+GitHub: https://github.com/harshjha08
 
 ---
 
-# ⭐ Support
+## ⭐ Support
 
-If you like this project, consider giving it a ⭐ on GitHub.
-
-It helps support the project and motivates future development.
+If you like this project, please consider giving it a star on GitHub.
 
 ---
 
-# 📜 License
+## 📜 License
 
 This project is licensed under the MIT License.
-
----
 
