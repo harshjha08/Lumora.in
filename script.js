@@ -235,7 +235,7 @@ function renderProducts(productList) {
         counter++;
     });
     productContainer.innerHTML = html;
-    //lucide.createIcons();
+    lucide.createIcons();
 }
 
 // ---- Initial load: show a curated first set of products ----
@@ -251,7 +251,6 @@ productContainer.addEventListener("click", (e) => {
             openAuthModal();
         } else {
             wishBtn.classList.toggle("active");
-            // showToast("added to wishlist")
             showToast('added to Wishlist', 'bag');
         }
         return;
@@ -483,7 +482,7 @@ function renderDropdown(dropdown, query) {
         });
 
         dropdown.classList.add('active');
-        //lucide.createIcons();
+        lucide.createIcons();
         return;
     }
 
@@ -597,7 +596,8 @@ loadBtn.addEventListener("click", () => {
   const toast = document.getElementById('toast');
   let toastTimer;
   function showToast(msg, icon){
-    toast.innerHTML = (icon ? iconMarkup(icon) : '') + '<span>' + msg + '</span>';
+    const iconMarkupHtml = icon ? iconMarkup(icon) : iconMarkup('heart');
+    toast.innerHTML = iconMarkupHtml + '<span>' + msg + '</span>';
     toast.classList.add('show');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);

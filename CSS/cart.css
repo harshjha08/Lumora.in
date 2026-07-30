@@ -179,6 +179,8 @@
   }
   .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
   .toast .icon{ color:var(--gold-soft); width:16px; height:16px; }
+  .toast .icon,
+  .toast .icon *{ fill:currentColor !important; stroke:currentColor !important; }
 
   /* ---------- Responsive ---------- */
   @media (max-width:1024px){
